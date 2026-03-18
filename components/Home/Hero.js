@@ -59,9 +59,8 @@ const Hero = () => {
           {/* <span className="text-accent">Platinum news, price And analysis</span> */}
           <span
             className="text-accent"
-            // style={{ textShadow: "1px 1px 2px rgba(255, 255, 255, 0.8)" }}
           >
-            Lithium market news, price and analysis
+            Nickel market news, price and analysis
           </span>
         </motion.h1>
 

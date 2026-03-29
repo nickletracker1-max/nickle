@@ -13,7 +13,7 @@ function LithiumCFDTradingViewWidget() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "AMEX:LIT",
+          "symbol": "NASDAQ:NIKL",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",

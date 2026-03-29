@@ -11,7 +11,7 @@ function TradingViewWidget() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "AMEX:LIT",
+          "symbol": "NASDAQ:NIKL",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",
@@ -22,15 +22,15 @@ function TradingViewWidget() {
           "save_image": false,
           "compareSymbols": [
             {
-              "symbol": "NYSE:ALB",
+              "symbol": "NYSE:VALE",
               "position": "SameScale"
             },
             {
-              "symbol": "NYSE:SQM",
+              "symbol": "NYSE:BHP",
               "position": "SameScale"
             },
             {
-              "symbol": "NYSE:LAC",
+              "symbol": "NYSE:RIO",
               "position": "SameScale"
             }
           ],

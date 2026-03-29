@@ -12,7 +12,7 @@ function TradingViewWidget() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "TSX:LAC",
+          "symbol": "ASX:NIC",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",
@@ -23,11 +23,11 @@ function TradingViewWidget() {
           "save_image": false,
           "compareSymbols": [
             {
-              "symbol": "ASX:PLS",
+              "symbol": "ASX:IGO",
               "position": "SameScale"
             },
             {
-              "symbol": "NASDAQ:BYDDY",
+              "symbol": "NASDAQ:NIKL",
               "position": "SameScale"
             }
           ],

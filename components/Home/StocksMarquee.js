@@ -124,19 +124,19 @@ const StocksMarquee = () => {
     script.async = true;
     script.innerHTML = JSON.stringify({
       symbols: [
-        { description: "", proName: "COMEX:HG1!" }, // Lithium Futures
-        { description: "", proName: "NASDAQ:COPX" }, // Global X Lithium Miners ETF
-        { description: "", proName: "NYSE:FCX" }, // Freeport-McMoRan - Major lithium producer
-        { description: "", proName: "NYSE:SCCO" }, // Southern Lithium Corporation
-        { description: "", proName: "NYSE:TECK" }, // Teck Resources - Lithium mining
-        { description: "", proName: "NYSE:BHP" }, // BHP Group - Mining company
-        { description: "", proName: "NYSE:RIO" }, // Rio Tinto - Mining company
-        { description: "", proName: "NYSE:VALE" }, // Vale S.A. - Mining company
-        { description: "", proName: "NYSE:AA" }, // Alcoa Corporation
-        { description: "", proName: "NYSE:NEM" }, // Newmont Corporation
-        { description: "", proName: "NYSE:GOLD" }, // Barrick Gold Corporation
-        { description: "", proName: "OTC:GLCNF" }, // Glencore plc
-        { description: "", proName: "LSE:ANTO" }, // Antofagasta plc
+        { description: "", proName: "NASDAQ:NIKL" },   // Sprott Nickel Miners ETF
+        { description: "", proName: "NYSE:VALE" },      // Vale - largest nickel producer
+        { description: "", proName: "NYSE:BHP" },       // BHP Group - nickel mining
+        { description: "", proName: "NYSE:RIO" },       // Rio Tinto - nickel mining
+        { description: "", proName: "ASX:NIC" },        // Nickel Industries Ltd
+        { description: "", proName: "ASX:IGO" },        // IGO Limited - nickel producer
+        { description: "", proName: "TSX:NKLA" },       // Nikola / nickel related
+        { description: "", proName: "OTC:GLCNF" },      // Glencore - nickel producer
+        { description: "", proName: "NYSE:TECK" },      // Teck Resources - nickel mining
+        { description: "", proName: "NYSE:FCX" },       // Freeport-McMoRan - base metals
+        { description: "", proName: "NYSE:AA" },        // Alcoa - base metals
+        { description: "", proName: "NYSE:NEM" },       // Newmont - mining
+        { description: "", proName: "LSE:ANTO" },       // Antofagasta - mining
       ],
       showSymbolLogo: true,
       isTransparent: false,

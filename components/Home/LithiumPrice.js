@@ -60,7 +60,7 @@ const LithiumPrice = () => {
         {/* Lithium Spot Price */}
         <div className="text-center lg:text-left">
           <h2 className="text-base font-bold text-white">
-            Lithium Spot Price
+            Nickel Spot Price
           </h2>
           <p className="text-base mt-1">¥{lithiumSpotPrice}</p>
         </div>
@@ -95,7 +95,7 @@ const LithiumPrice = () => {
       {/* Small Screen Layout */}
       <div className="lg:hidden space-y-2">
         <p className="text-base font-bold text-white">
-          Lithium Spot Price:{" "}
+          Nickel Spot Price:{" "}
           <span className="font-normal">¥{lithiumSpotPrice}</span>
         </p>
 

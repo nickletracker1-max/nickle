@@ -35,7 +35,7 @@ const LithiumLivePrice = () => {
     return (
       <div className="text-center">
         <h2 className="flex text-[21px] md:text-[16px] lg:text-[21px] cambay font-bold text-black1/80 capitalize border-b border-black1/20 pb-2 mb-6 lg:mb-4">
-          Live Lithium Price
+          Live Nickel Price
         </h2>
         <div className="flex justify-center items-center h-32">
           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-800"></div>
@@ -49,10 +49,10 @@ const LithiumLivePrice = () => {
     return (
       <div className="text-center">
         <h2 className="flex text-[21px] md:text-[16px] lg:text-[21px] cambay font-bold text-black1/80 capitalize border-b border-black1/20 pb-2 mb-6 lg:mb-4">
-          Live Lithium Price
+          Live Nickel Price
         </h2>
         <div className="text-center py-8 text-red-500">
-          Error loading lithium price: {error}
+          Error loading nickel price: {error}
         </div>
       </div>
     );
@@ -62,10 +62,10 @@ const LithiumLivePrice = () => {
     return (
       <div className="text-center">
         <h2 className="flex text-[21px] md:text-[16px] lg:text-[21px] cambay font-bold text-black1/80 capitalize border-b border-black1/20 pb-2 mb-6 lg:mb-4">
-          Live Lithium Price
+          Live Nickel Price
         </h2>
         <div className="text-center py-8 text-gray-500">
-          No lithium price data available
+          No nickel price data available
         </div>
       </div>
     );
@@ -87,7 +87,7 @@ const LithiumLivePrice = () => {
   return (
     <div className="text-center">
       <h2 className="flex text-[21px] md:text-[16px] lg:text-[21px] cambay font-bold text-black1/80 capitalize border-b border-black1/20 pb-2 mb-6 lg:mb-4">
-        Live Lithium Price
+        Live Nickel Price
       </h2>
 
       <div className="bg-accent/30 p-3 md:p-2 lg:p-3 py-4 w-full border border-accent/30 rounded-md flex justify-between items-center">
@@ -95,7 +95,7 @@ const LithiumLivePrice = () => {
           <img
             className="w-16 md:w-12 lg:w-28 h-16 md:h-6 lg:h-10 sm:h-10 sm:w-28"
             src="/logo.jpg"
-            alt="Lithium Tracker Logo"
+            alt="Nickel Tracker Logo"
           />
         </div>
 
@@ -111,7 +111,7 @@ const LithiumLivePrice = () => {
       <div className="mt-1 bg-accent/30 p-3 md:p-2 lg:p-3 py-4 w-full border border-accent/30 rounded-md flex justify-between items-center">
         <div className="w-[35%] md:w-[30%]">
           <h3 className="text-xs md:text-[9px] lg:text-sm font-bold text-green">
-            Lithium Spot Price
+            Nickel Spot Price
           </h3>
         </div>
 

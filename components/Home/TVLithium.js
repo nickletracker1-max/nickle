@@ -13,7 +13,7 @@ function LithiumTradingViewWidget() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "NYSE:VALE",
+          "symbol": "COMEX:NI1!",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",

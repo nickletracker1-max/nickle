@@ -9,20 +9,20 @@ import { useRef } from "react";
 const StayAhead = () => {
   const features = [
     {
-      title: "Lithium Stock Screener",
+      title: "Nickel Stock Screener",
       icon: <LuCrown className="w-6 h-6 text-accent" />,
       description: [
-        "Use our Lithium Stock screener to find suitable Lithium stocks",
+        "Use our Nickel Stock screener to find suitable Nickel stocks",
         "Search by Jurisdiction, stock exchange, marketcap",
       ],
       link: "/investments?tab=stock-screener",
     },
     {
-      title: "Lithium News",
+      title: "Nickel News",
       icon: <IoNewspaperOutline className="w-6 h-6 text-accent" />,
       description: [
-        "Stay ahead with up to date Lithium News",
-        "Track most recent press releases on all Lithium stocks",
+        "Stay ahead with up to date Nickel News",
+        "Track most recent press releases on all Nickel stocks",
       ],
       link: "/news",
     },
@@ -30,7 +30,7 @@ const StayAhead = () => {
       title: "Track Insider Transactions",
       icon: <AiOutlineSetting className="w-6 h-6 text-accent" />,
       description: [
-        "See if insiders are buying or selling your Lithium stocks",
+        "See if insiders are buying or selling your Nickel stocks",
         "See recent insider trades so you can stay ahead of the game",
       ],
       link: "/investments?tab=insider-transactions",
@@ -70,10 +70,10 @@ const StayAhead = () => {
         <div className="md:w-2/6 sm:p-8 rounded-lg flex flex-col justify-between">
           <div>
             <h1 className="text-xl sm:text-3xl font-bold mb-3 sm:mb-6 cambay text-white">
-              Stay ahead with real-time Lithium news, price and analysis
+              Stay ahead with real-time Nickel news, price and analysis
             </h1>
             <p className="text-sm text-white/80 font-medium mb-4 sm:mb-8">
-              Sign up for Lithium Tracker's to gain access to Lithium Tracker's full
+              Sign up for Nickel Tracker's to gain access to Nickel Tracker's full
               suite of research tools
             </p>
           </div>

@@ -173,7 +173,7 @@ const Navbar = () => {
   const router = useRouter();
   const userData = GetUserData();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const navLinks = [
@@ -197,17 +197,17 @@ const Navbar = () => {
     closed: { opacity: 0, x: "-100%" },
   };
 
-  useEffect(() => {
-    setIsLoggedIn(!!userData?.email);
-    setIsLoading(false);
-  }, [userData]);
+  // useEffect(() => {
+  //   setIsLoggedIn(!!userData?.email);
+  //   setIsLoading(false);
+  // }, [userData]);
 
-  if (isLoading) {
-    return null;
-  }
+  // if (isLoading) {
+  //   return null;
+  // }
 
   return (
-    <div className="bg-white border-b fixed top-0 left-0 w-full z-50">
+    <div className="bg-white border-b shadow fixed top-0 left-0 w-full z-50">
       <div className="container mx-auto px-4 xl:px-10 py-5 flex justify-between items-center">
         {/* Logo */}
         <Image
@@ -245,7 +245,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Buttons (Visible after xl) */}
-        {isLoggedIn ? (
+        {/* {isLoggedIn ? (
           <button
             className="text-2xl hidden xl:block text-primary py-3 hover:text-accent/90"
             onClick={() => navigateTo("/dashboard")}
@@ -259,7 +259,7 @@ const Navbar = () => {
           >
             Login
           </button>
-        )}
+        )} */}
 
         {/* Mobile Menu Toggle (Hidden after xl) */}
         <div className="xl:hidden">
@@ -297,7 +297,7 @@ const Navbar = () => {
                 {name}
               </button>
             ))}
-            {isLoggedIn ? (
+            {/* {isLoggedIn ? (
               <button
                 className="bg-accent text-white px-5 py-2 rounded-sm hover:bg-accent/90"
                 onClick={() => navigateTo("/dashboard")}
@@ -311,7 +311,7 @@ const Navbar = () => {
               >
                 Login
               </button>
-            )}
+            )} */}
           </motion.div>
         </>
       )}

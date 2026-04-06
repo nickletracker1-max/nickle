@@ -20,12 +20,12 @@ const C101Hero = () => {
           {/* Text Content */}
           <div className="relative z-10 p-6 text-white max-w-2xl">
             <p className="inline-block px-2 py-1 rounded-full text-xs font-semibold bg-accent">
-              Lithium 101
+              Nickel 101
             </p>
 
             <h1 className="text-2xl lg:text-4xl font-bold my-4  cambay">
               Explore the Latest Insights, Market Data, and{" "}
-              <span className="text-white">Key Information on Lithium</span>
+              <span className="text-white">Key Information on Nickel</span>
             </h1>
 
             <p className="text-sm md:text-base mb-6">
@@ -37,7 +37,7 @@ const C101Hero = () => {
 
             <div className="text-xs text-gray-300">
               <p className="text-gray-300">
-                Your complete guide to understanding lithium markets
+                Your complete guide to understanding nickel markets
               </p>
             </div>
           </div>

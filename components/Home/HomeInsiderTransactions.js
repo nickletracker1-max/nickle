@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CardSkeleton from "@/components/CardSkeleton";
 
 const HomeInsiderTransactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -44,7 +45,7 @@ const HomeInsiderTransactions = () => {
   if (loading) {
     return (
       <div className="text-center py-4">
-        <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-accent mx-auto"></div>
+        <CardSkeleton/>
       </div>
     );
   }

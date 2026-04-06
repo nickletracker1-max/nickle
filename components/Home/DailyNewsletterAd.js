@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import CardSkeleton from "@/components/CardSkeleton"
 
 const DailyNewsletterAd = () => {
   const router = useRouter();

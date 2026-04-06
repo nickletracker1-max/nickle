@@ -381,11 +381,13 @@
 
 // export default LatestNews;
 
-import React, { useState, useEffect } from "react";
-import Loader from "../Loader";
-import { GENERAL_NEWS } from "@/src/api/lithiumAPI";
 
-// Updated: 2026-02-15 - Using ONLY general news endpoint
+
+import React, { useState, useEffect } from "react";
+
+import { GENERAL_NEWS } from "@/src/api/lithiumAPI";
+import CardSkeleton from "@/components/CardSkeleton";
+
 const LatestNews = () => {
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -394,24 +396,16 @@ const LatestNews = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        console.log('Fetching latest news from:', GENERAL_NEWS);
         const response = await fetch(GENERAL_NEWS);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
-        console.log('Latest news data:', data);
-        
-        if (!data || data.length === 0) {
-          console.log("No news available");
-          setNewsData([]);
-          setLoading(false);
+        if (!data || data.length === 0){
+          console.log("No News to show")
+          setNewsData([])
+          setLoading(false)
           return;
         }
-
-        // Process the data to add today's date for missing dates
+        
         const processedData = Array.isArray(data)
           ? data.map((news) => ({
               ...news,
@@ -422,43 +416,27 @@ const LatestNews = () => {
         setNewsData(processedData);
         setLoading(false);
       } catch (err) {
-        console.error('Error fetching latest news:', err);
         setError(err.message);
-        setNewsData([]);
         setLoading(false);
       }
     };
-
     fetchNews();
   }, []);
 
   const formatDate = (dateString) => {
     if (!dateString) return "";
-    try {
-      return new Date(dateString).toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-      });
-    } catch (error) {
-      console.warn("Invalid date format:", dateString);
-      return "";
-    }
+    return new Date(dateString).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
   };
 
-  if (loading) {
-    return (
-      <div>
-        <h1 className="text-[21px] cambay font-bold mb-5 border-b border-black/10 pb-2">
-          Latest Nickel News
-        </h1>
-        <div className="flex justify-center items-center h-32">
-          <Loader />
-        </div>
-      </div>
-    );
-  }
-
+  if (loading) return (
+    <div className="w-full">
+      <CardSkeleton/>
+    </div>
+  );
   if (error) {
     return (
       <div>
@@ -486,106 +464,80 @@ const LatestNews = () => {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <h1 className="text-[21px] cambay font-bold mb-5 border-b border-black/10 pb-2">
         Latest Nickel News
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Left Side: Main News with Image */}
-        <div>
-          {newsData[0] && (
-            <a
-              href={newsData[0].url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              {newsData[0].image_url && (
+      {/* Main Container: Stacked for better width utilization */}
+      <div className="flex flex-col gap-8 w-full">
+        
+        {/* TOP SECTION: Featured Large News (Full Width) */}
+        {newsData[0] && (
+          <a
+            href={newsData[0].url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block w-full"
+          >
+            <div className="relative w-full h-[400px] mb-4 overflow-hidden rounded-lg">
+              {newsData[0].image_url ? (
                 <img
                   src={newsData[0].image_url}
                   alt={newsData[0].title}
-                  className="w-full h-64 object-cover mb-2 rounded-md"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+              ) : (
+                <div className="w-full h-full bg-gray-200 flex items-center justify-center">No Image</div>
               )}
-              
-              {/* Source or Ticker Badge */}
+            </div>
+            
+            <div className="w-full">
               {(newsData[0].source || newsData[0].ticker) && (
-                <div className="mb-2">
-                  <span className="bg-accent text-[11px] rounded-sm text-white px-2 py-1">
-                    {newsData[0].source || newsData[0].ticker}
-                  </span>
-                </div>
+                <span className="bg-accent text-[11px] font-bold uppercase tracking-wider text-white px-2 py-1 rounded-sm mb-3 inline-block">
+                  {newsData[0].source || newsData[0].ticker}
+                </span>
               )}
-              
-              <h2 className="text-lg font-semibold text-primary mb-1 hover:underline">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3 leading-tight group-hover:underline">
                 {newsData[0].title}
               </h2>
-              
-              {/* Summary or Content */}
-              {(newsData[0].summary || newsData[0].content) && (
-                <p className="text-[14px] text-gray-600 mb-2 line-clamp-2">
-                  {(newsData[0].summary || newsData[0].content).length > 150 
-                    ? `${(newsData[0].summary || newsData[0].content).substring(0, 150)}...`
-                    : (newsData[0].summary || newsData[0].content)}
-                </p>
-              )}
-              
-              {/* Company Name (for stock news) */}
-              {newsData[0].company_name && (
-                <p className="text-[13px] text-gray-600 mb-1">
-                  {newsData[0].company_name}
-                </p>
-              )}
-              
-              <p className="text-gray-500 text-sm">
-                {formatDate(newsData[0].date)}
+              <p className="text-gray-600 text-base mb-3 line-clamp-3 leading-relaxed">
+                {newsData[0].summary || newsData[0].content}
               </p>
-            </a>
-          )}
-        </div>
+              <p className="text-gray-500 text-sm font-medium">{formatDate(newsData[0].date)}</p>
+            </div>
+          </a>
+        )}
 
-        {/* Right Side: Three Vertical News with Images */}
-        <div className="space-y-4">
+        {/* BOTTOM SECTION: Sub-News Grid (Stretching to fill remaining space) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full border-t border-black/5 pt-8">
           {newsData.slice(1, 4).map((news, index) => (
             <a
               key={news.id || index}
               href={news.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex space-x-4"
+              className="flex flex-col group w-full"
             >
-              {news.image_url && (
-                <img
-                  src={news.image_url}
-                  alt={news.title}
-                  className="w-24 h-24 object-cover flex-shrink-0 rounded-md"
-                />
-              )}
-              <div className="flex flex-col justify-start">
-                {/* Source or Ticker Badge */}
-                {(news.source || news.ticker) && (
-                  <div className="mb-1">
-                    <span className="bg-accent text-[10px] rounded-sm text-white px-2 py-1">
-                      {news.source || news.ticker}
-                    </span>
-                  </div>
-                )}
+              <div className="w-full h-48 overflow-hidden rounded-md mb-3">
+                { news?.image_url &&(<img
+                    src={news.image_url}
+                    alt={news.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />) 
                 
-                <h3 className="text-sm font-medium text-primary line-clamp-2 text-left hover:underline">
+                }
+              </div>
+              <div>
+                {(news.source || news.ticker) && (
+                  <span className="text-accent text-[10px] font-bold uppercase mb-1 block">
+                    {news.source || news.ticker}
+                  </span>
+                )}
+                <h3 className="text-base font-bold text-primary leading-snug line-clamp-2 group-hover:underline mb-2">
                   {news.title}
                 </h3>
-                
-                {/* Company Name (for stock news) */}
-                {news.company_name && (
-                  <p className="text-[11px] text-gray-600 mt-1">
-                    {news.company_name}
-                  </p>
-                )}
-                
-                <p className="text-gray-500 text-xs mt-2">
-                  {formatDate(news.date)}
-                </p>
+                <p className="text-gray-500 text-xs">{formatDate(news.date)}</p>
               </div>
             </a>
           ))}

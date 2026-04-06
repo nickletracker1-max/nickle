@@ -324,9 +324,10 @@ const Login = () => {
                     type="email"
                     name="email"
                     placeholder="Email Address"
-                    value={formData.email}
+                    
+                    value={formData.email} 
                     onChange={handleChange}
-                    className="w-full border-b border-gray-300 focus:outline-none focus:border-accent py-2 placeholder:text-black/40 placeholder:text-sm"
+                    className="w-full border-b border-gray-300 focus:outline-none focus:border-accent  placeholder:text-black/40 placeholder:text-sm px-4 py-3 rounded-lg"
                   />
                   {errors.email && (
                     <div className="text-red-500 text-sm mt-1">
@@ -341,7 +342,7 @@ const Login = () => {
                     placeholder="Password"
                     value={formData.password}
                     onChange={handleChange}
-                    className="w-full border-b border-gray-300 focus:outline-none focus:border-accent py-2 placeholder:text-black/40 placeholder:text-sm"
+                    className="w-full border-b border-gray-300 rounded-lg focus:outline-none focus:border-accent py-3 px-4 placeholder:text-black/40 placeholder:text-sm  "
                   />
                   {errors.password && (
                     <div className="text-red-500 text-sm mt-1">

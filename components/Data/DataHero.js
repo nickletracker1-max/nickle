@@ -27,12 +27,12 @@ const DataHero = () => {
           {/* Text Content */}
           <div className="relative z-10 p-6 text-white max-w-2xl">
             <p className="inline-block px-2 py-1 rounded-full text-xs font-semibold bg-accent">
-              Lithium Data
+              Nickel Data
             </p>
 
             <h1 className="text-2xl lg:text-4xl font-bold my-4 cambay">
               Discover the data you need to analyze and{" "}
-              <span className="text-white">Research Lithium</span>
+              <span className="text-white">Research Nickel</span>
             </h1>
 
             <p className="text-sm md:text-base mb-10">

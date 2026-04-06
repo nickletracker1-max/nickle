@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { MOST_FOLLOWED, LITHIUM_STOCK_DETAIL } from "@/src/api/lithiumAPI";
 import axios from "axios";
+import CardSkeleton from "@/components/CardSkeleton";
 
 const MostFollowedStocksTable = () => {
   const [stocksData, setStocksData] = useState({
@@ -212,9 +213,11 @@ const MostFollowedStocksTable = () => {
     return (
       <div className="w-full px-3 md:px-10 lg:px-12 py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center items-center py-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-accent"></div>
-            <span className="ml-3 text-gray-600">Loading stock data...</span>
+          <div className="flex justify-between py-8 gap-5">
+            <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            
           </div>
         </div>
       </div>

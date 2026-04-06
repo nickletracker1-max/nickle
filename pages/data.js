@@ -23,7 +23,13 @@ const Data = () => {
         canonicalUrl="https://musical-panda-75f15d.netlify.app/data"
       />
       <Navbar />
-      <DataHero />
+      <div className="pt-24">
+        <div className="mt-6">
+          <DataHero />
+        </div>
+        
+      </div>
+      
       {/* tabs  */}
       <div>
         <TabsSection />

@@ -20,7 +20,7 @@ function LithiumCFDTradingViewWidget() {
           "style": "1",
           "locale": "en",
           "enable_publishing": false,
-          "hide_top_toolbar": false,
+          "hide_top_toolbar": true,
           "hide_legend": false,
           "allow_symbol_change": true,
           "save_image": false,

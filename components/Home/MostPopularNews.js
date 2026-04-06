@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { STOCK_NEWS } from "@/src/api/lithiumAPI";
+import CardSkeleton from "@/components/CardSkeleton";
 
 const MostPopularNews = () => {
   const [news, setNews] = useState([]);
@@ -41,7 +42,7 @@ const MostPopularNews = () => {
         <h2 className="text-[21px] font-bold cambay text-black1/80 border-b border-gray-300 pb-2 mb-4">
           Most Popular
         </h2>
-        <div className="text-center py-8">Loading most popular news...</div>
+        <CardSkeleton/>
       </div>
     );
   }

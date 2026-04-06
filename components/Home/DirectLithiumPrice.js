@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CardSkeleton from "../CardSkeleton";
 
 const DirectLithiumPrice = () => {
   const [lithiumData, setLithiumData] = useState(null);
@@ -59,10 +60,8 @@ const DirectLithiumPrice = () => {
         <h2 className="flex text-[21px] md:text-[16px] lg:text-[21px] cambay font-bold text-black1/80 capitalize border-b border-black1/20 pb-2 mb-6 lg:mb-4">
           Live Nickel Price
         </h2>
-        <div className="flex justify-center items-center h-32">
-          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-800"></div>
-          <span className="ml-3 text-gray-800 font-semibold">Loading...</span>
-        </div>
+        <CardSkeleton/>
+        
       </div>
     );
   }

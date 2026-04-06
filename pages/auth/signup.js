@@ -379,7 +379,7 @@ const Signup = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.username}
-                        className="w-full border-b border-gray-300 focus:outline-none focus:border-accent py-2 placeholder:text-black/40 placeholder:text-sm"
+                        className="w-full border-b border-gray-300 focus:outline-none focus:border-accent py-3 px-4 rounded-lg placeholder:text-black/40 placeholder:text-sm"
                       />
                       {errors.username && touched.username && (
                         <div className="text-red-500 text-sm mt-1">
@@ -413,7 +413,7 @@ const Signup = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.password}
-                        className="w-full border-b border-gray-300 focus:outline-none focus:border-accent py-2 placeholder:text-black/40 placeholder:text-sm"
+                        className="w-full border-b border-gray-300 focus:outline-none focus:border-accent py-3 px-4 rounded-lg placeholder:text-black/40 placeholder:text-sm"
                       />
                       {errors.password && touched.password && (
                         <div className="text-red-500 text-sm mt-1">
@@ -430,7 +430,7 @@ const Signup = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.confirmPassword}
-                        className="w-full border-b border-gray-300 focus:outline-none focus:border-accent py-2 placeholder:text-black/40 placeholder:text-sm"
+                        className="w-full border-b border-gray-300 focus:outline-none focus:border-accent py-3 px-4 rounded-lg placeholder:text-black/40 placeholder:text-sm"
                       />
                       {errors.confirmPassword && touched.confirmPassword && (
                         <div className="text-red-500 text-sm mt-1">

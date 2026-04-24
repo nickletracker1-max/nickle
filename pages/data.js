@@ -1,18 +1,30 @@
 import Navbar from "@/components/Navbar";
 import React from "react";
-import { useRouter } from "next/router";
 import DataHero from "@/components/Data/DataHero";
-import DPricePremium from "@/components/Data/DPricePremium";
-import DDemandDatabase from "@/components/Data/DDemandDatabase";
-import TabsSection from "@/components/Data/TabSection";
 import Footer from "@/components/Footer";
-import DSupply from "@/components/Data/DSupply";
-import DWPICSupply from "@/components/Data/DWPICSupply";
 import SEO from "@/components/SEO";
+import NickelIntro from "@/components/Data/NickelIntro";
+import Prices from "@/components/Data/NickelPrices"
+import ClassSplit from "@/components/Data/ClassSplit";
+import LMEStocks from "@/components/Data/LMEStocks";
+import Indonesia from "@/components/Data/Indonesia";
+import NickelSupply from "@/components/Data/NickelSupply";
+import PipelineSection from "@/components/Data/PipelineSection";
+import StainlessSteelSection from "@/components/Data/StainlessSteelSection";
+import Calculator from "@/components/Data/Calculator";
+import Faq from "@/components/Data/Faq"
+import BatteryDemand from "@/components/Data/BatteryDemand"
+import Forecast from "@/components/Data/Forecast"
+import Balance from "@/components/Data/Balance"
+import Producers from "@/components/Data/Producers";
+import History from "@/components/Data/History"
+import Drivers from "@/components/Data/Drivers"
+import Ticker from "@/components/Data/Ticker"
+import SectionNav from "@/components/Data/SectionNav"
+import CostCurve from "@/components/Data/CostCurve";
 
 const Data = () => {
-  const { query } = useRouter();
-  const currentTab = query.tab || "priceandpremiums";
+  
 
   return (
     <div>
@@ -23,24 +35,36 @@ const Data = () => {
         canonicalUrl="https://musical-panda-75f15d.netlify.app/data"
       />
       <Navbar />
-      <div className="pt-24">
-        <div className="mt-6">
-          <DataHero />
-        </div>
-        
-      </div>
       
-      {/* tabs  */}
-      <div>
-        <TabsSection />
-        <div className="mt-6">
-          {currentTab === "priceandpremiums" && <DPricePremium />}
-          {currentTab === "demanddatabase" && <DDemandDatabase />}
-          {currentTab === "supply" && <DSupply />}
-          {currentTab === "wpicsupply" && <DWPICSupply />}
-        </div>
+      
+      
+      <div className="pt-28">
+          <Ticker/>
+          <DataHero />
       </div>
 
+      <div className="flex flex-col divide-y divide-bdr ">
+        <NickelIntro/>
+        <SectionNav/>
+        
+        
+        <Prices/>
+        <ClassSplit/>
+        <LMEStocks/>
+        <Indonesia/>
+        <NickelSupply/>
+        <PipelineSection/>
+        <StainlessSteelSection/>
+        <BatteryDemand/>
+        <Forecast/>
+        <Balance/>
+        <Producers/>
+        <History/>
+        <Drivers/>
+        <CostCurve/>
+        <Calculator/>
+        <Faq/>
+      </div>
       <div className="mt-24">
         <Footer />
       </div>

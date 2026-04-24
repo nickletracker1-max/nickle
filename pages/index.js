@@ -49,8 +49,8 @@ const home = () => {
           <div className="lg:col-span-9 flex flex-col items-stretch space-y-12 w-full">
             
             {/* Prices Section */}
-            <div className="w-full block">
-              <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
+            <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
+              <h1 className="text-[21px] cambay font-bold mb-3  border-black/10 pb-1">
                 Prices
               </h1>
               <div className="w-full">
@@ -59,8 +59,8 @@ const home = () => {
             </div>
 
             {/* Transactions Section */}
-            <div className="w-full block">
-              <div className="flex justify-between items-center mb-3 border-b border-black/10 pb-1">
+            <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
+              <div className="flex justify-between items-center mb-3  border-black/10 pb-1">
                 <h1 className="text-[21px] cambay font-bold">
                   Recent Canadian Company Insider Transactions
                 </h1>
@@ -75,10 +75,10 @@ const home = () => {
             
             {/* News Feed - Forced to stretch to full width of middle column */}
             <div className="flex flex-col items-stretch w-full space-y-12">
-              <div className="w-full block">
+              <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
                 <LatestNews />
               </div>
-              <div className="w-full block">
+              <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
                 <PressReleaseNews />
               </div>
             </div>
@@ -86,11 +86,20 @@ const home = () => {
 
           {/* RIGHT SIDEBAR */}
           <div className="lg:col-span-3 flex flex-col items-stretch space-y-8 w-full">
+            <div className="border border-black/10 p-3 mr-2 rounded-xl">
               <Substacks />
-              <DailyNewsletterAd />
+            </div>
+            <div className="border border-black/10 p-3 mr-2 rounded-xl">
               <DirectLithiumPrice />
+            </div>
+            <div className="border border-black/10 p-3 mr-2 rounded-xl">
               <PopularIntradayReturn />
+            </div>
+            <div className="border border-black/10 p-3 mr-2 rounded-xl">
               <PopularTools />
+            </div>   
+              <DailyNewsletterAd />
+              
               <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
                 Nickel Price Chart
               </h1>
@@ -102,24 +111,21 @@ const home = () => {
 
         {/* --- FULL WIDTH BREAKOUTS --- */}
         <div className="px-4 md:px-10 lg:px-12 w-full space-y-16">
-          <div className="border-t border-black/10 pt-10 w-full">
+          <div className="border p-3 mr-2 border-black/10 pt-10 w-full rounded-xl">
             <StockNews />
           </div>
 
-          <div className="border-t border-black/10 pt-10 w-full">
+          <div className="border p-3 mr-2  border-black/10 pt-10 w-full rounded-xl">
             <MostPopularNews />
-          </div>
-
-          <div className="border-t border-black/10 pt-10 w-full">
-            <MostFollowedStocksTable />
-          </div>
-
-          <div className="pb-16 w-full">
-            <StayAhead />
           </div>
         </div>
       </div>
-
+      <div className=" border-black/10 pt-10 w-full">
+        <MostFollowedStocksTable />
+      </div>
+      <div className="pb-8 w-full">
+        <StayAhead />
+      </div>
       <Footer />
     </div>
   );

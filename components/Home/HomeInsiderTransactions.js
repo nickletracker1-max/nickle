@@ -70,7 +70,7 @@ const HomeInsiderTransactions = () => {
     <div className="overflow-x-auto custom-scrollbar-hidden">
       <table className="table-auto w-full border-collapse text-xs">
         <thead className="text-left">
-          <tr className="text-black/60">
+          <tr className="text-black/60 lg:text-lg">
             <th className="border-t px-2 py-2">Country</th>
             <th className="border-t px-2 py-2">Company</th>
             <th className="border-t px-2 py-2">Ticker</th>
@@ -89,34 +89,34 @@ const HomeInsiderTransactions = () => {
               key={transaction.id || index} 
               className="text-xs hover:bg-accent/10 transition-colors"
             >
-              <td className="border-t px-2 py-2">
+              <td className="border-t px-2 py-4">
                 <span className="text-lg" title="Canada">🇨🇦</span>
               </td>
-              <td className="border-t px-2 py-2 max-w-[120px] truncate" title={transaction.company_name}>
+              <td className="border-t px-2 py-4 max-w-[120px] truncate" title={transaction.company_name}>
                 {transaction.company_name || "N/A"}
               </td>
-              <td className="border-t px-2 py-2 font-semibold text-accent">
+              <td className="border-t px-2 py-4 font-semibold text-accent">
                 {transaction.ticker || "N/A"}
               </td>
-              <td className="border-t px-2 py-2 max-w-[100px] truncate" title={transaction.insider_name}>
+              <td className="border-t px-2 py-4 max-w-[100px] truncate" title={transaction.insider_name}>
                 {transaction.insider_name || "N/A"}
               </td>
-              <td className="border-t px-2 py-2 max-w-[100px] truncate" title={transaction.title}>
+              <td className="border-t px-2 py-4 max-w-[100px] truncate" title={transaction.title}>
                 {transaction.title || "N/A"}
               </td>
-              <td className="border-t px-2 py-2">
+              <td className="border-t px-2 py-4">
                 {transaction.trade_type || "N/A"}
               </td>
-              <td className="border-t px-2 py-2">
+              <td className="border-t px-2 py-4">
                 {transaction.price || "$0.00"}
               </td>
-              <td className="border-t px-2 py-2 text-green-600 font-medium">
+              <td className="border-t px-2 py-4 text-green-600 font-medium">
                 {transaction.qty || "0"}
               </td>
-              <td className="border-t px-2 py-2 text-green-600 font-medium">
+              <td className="border-t px-2 py-4 text-green-600 font-medium">
                 {transaction.value || "$0"}
               </td>
-              <td className="border-t px-2 py-2 whitespace-nowrap">
+              <td className="border-t px-2 py-4 whitespace-nowrap">
                 {formatDate(transaction.transaction_date)}
               </td>
             </tr>

@@ -2,7 +2,7 @@ const cardData = [
   {
     id: "1",
     href: "/lithium101/1",
-    image: "/C101imgs/lithium.png",
+    image: "/C101imgs/lithum-1.png",
     video: "/C101imgs/lithium.gif",
     title: "Lithium",
     description:
@@ -66,7 +66,7 @@ const cardData = [
   {
     id: "2",
     href: "/brass101/2",
-    image: "/C101imgs/brass.png",
+    image: "/C101imgs/brass.jpg",
     video: "/C101imgs/brass.gif",
     title: "Brass",
     description:
@@ -129,7 +129,7 @@ const cardData = [
   {
     id: "3",
     href: "/bronze101/3",
-    image: "/C101imgs/bronze.png",
+    image: "/C101imgs/bronze.jpg",
     video: "/C101imgs/bronze.gif",
     title: "Bronze",
     description:
@@ -186,7 +186,7 @@ const cardData = [
   {
     id: "4",
     href: "/aluminum-bronze101/4",
-    image: "/C101imgs/aluminum-bronze.png",
+    image: "/C101imgs/aluminum-bronze.jpg",
     video: "/C101imgs/aluminum-bronze.gif",
     title: "Aluminum Bronze",
     description:
@@ -244,7 +244,7 @@ const cardData = [
   {
     id: "5",
     href: "/nickel-silver101/5",
-    image: "/C101imgs/nickel-silver.png",
+    image: "/C101imgs/nickel-silver.jpg",
     video: "/C101imgs/nickel-silver.gif",
     title: "Nickel Silver",
     description:
@@ -302,7 +302,7 @@ const cardData = [
   {
     id: "6",
     href: "/beryllium-lithium101/6",
-    image: "/C101imgs/beryllium-lithium.png",
+    image: "/C101imgs/Beryllium-Lithium.jpg",
     video: "/C101imgs/beryllium-lithium.gif",
     title: "Beryllium Lithium",
     description:

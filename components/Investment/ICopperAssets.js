@@ -25,7 +25,7 @@ const ICopperAssets = () => {
       country: ["All", ...new Set(lithiumAssetsData.map(item => item["Domiciled"]).filter(Boolean))],
       stage: ["All", ...new Set(lithiumAssetsData.map(item => item["Company Type"]).filter(Boolean))],
       mineLocation: ["All", ...new Set(lithiumAssetsData.map(item => item["Mine Location Country"]).filter(Boolean))],
-      primaryResource: ["All", ...new Set(lithiumAssetsData.map(item => item["Primary Assets"]).filter(Boolean))],
+      primaryResource: ["All", ...new Set(lithiumAssetsData.map(item => item["Primary Resource"]).filter(Boolean))],
     };
   }, []);
 
@@ -42,7 +42,7 @@ const ICopperAssets = () => {
         (filters.country === "All" || asset["Domiciled"] === filters.country) &&
         (filters.stage === "All" || asset["Company Type"] === filters.stage) &&
         (filters.mineLocation === "All" || asset["Mine Location Country"] === filters.mineLocation) &&
-        (filters.primaryResource === "All" || asset["Primary Assets"] === filters.primaryResource);
+        (filters.primaryResource === "All" || asset["Primary Resource"] === filters.primaryResource);
 
       return matchesSearch && matchesFilters;
     });
@@ -222,15 +222,15 @@ const ICopperAssets = () => {
                   </th>
                   <th 
                     className="px-4 py-[15px] text-left text-[11px] font-semibold uppercase tracking-wider cursor-pointer hover:bg-gray-50"
-                    onClick={() => handleSort('Primary Assets')}
+                    onClick={() => handleSort('Primary Resource')}
                   >
-                    PRIMARY RESOURCE {sortColumn === 'Primary Assets' && (sortDirection === 'asc' ? '↑' : '↓')}
+                    PRIMARY RESOURCE {sortColumn === 'Primary Resource' && (sortDirection === 'asc' ? '↑' : '↓')}
                   </th>
                   <th 
                     className="px-4 py-[15px] text-left text-[11px] font-semibold uppercase tracking-wider cursor-pointer hover:bg-gray-50"
                     onClick={() => handleSort('Secondary Assets')}
                   >
-                    SECONDARY RESOURCE {sortColumn === 'Secondary Assets' && (sortDirection === 'asc' ? '↑' : '↓')}
+                    SECONDARY RESOURCE {sortColumn === 'Secondary Resource' && (sortDirection === 'asc' ? '↑' : '↓')}
                   </th>
                   <th className="px-4 py-[15px] text-left text-[11px] font-semibold uppercase tracking-wider">
                     NOTES
@@ -265,10 +265,10 @@ const ICopperAssets = () => {
                       </span>
                     </td>
                     <td className="px-4 py-[12px]">
-                      {asset["Primary Assets"] || "N/A"}
+                      {asset["Primary Resource"] || "N/A"}
                     </td>
                     <td className="px-4 py-[12px]">
-                      {asset["Secondary Assets"] || "N/A"}
+                      {asset["Secondary Resource"] || "N/A"}
                     </td>
                     <td 
                       className="px-4 py-[12px] max-w-[300px] truncate relative cursor-help"

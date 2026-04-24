@@ -148,7 +148,7 @@ const MostFollowedStocksTable = () => {
   const renderStockRow = (stock, index) => (
     <div 
       key={stock.id || `${stock.ticker}-${index}`}
-      className="flex justify-between items-center py-2 px-3 hover:bg-gray-50 cursor-pointer transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+      className="flex justify-between items-center py-2 px-3 hover:bg-gray-100 cursor-pointer transition-colors duration-200 border-b border-gray-100 last:border-b-0"
       onClick={() => handleStockClick(stock.ticker?.split(".")[0])}
     >
       <div className="flex-1">

@@ -39,7 +39,7 @@ const MostPopularNews = () => {
   if (loading) {
     return (
       <div className="mb-14 md:mb-10">
-        <h2 className="text-[21px] font-bold cambay text-black1/80 border-b border-gray-300 pb-2 mb-4">
+        <h2 className="text-[21px] font-bold cambay text-black1/80  border-gray-300 pb-2 mb-4 ">
           Most Popular
         </h2>
         <CardSkeleton/>
@@ -63,7 +63,7 @@ const MostPopularNews = () => {
   if (news.length === 0) {
     return (
       <div className="mb-14 md:mb-10">
-        <h2 className="text-[21px] font-bold cambay text-black1/80 border-b border-gray-300 pb-2 mb-4">
+        <h2 className="text-[21px] font-bold cambay text-black1/80  border-gray-300 pb-2 mb-4">
           Most Popular
         </h2>
         <div className="text-center py-8 text-gray-500">
@@ -75,7 +75,7 @@ const MostPopularNews = () => {
 
   return (
     <div className="mb-14 md:mb-10">
-      <h2 className="text-[21px] font-bold cambay text-black1/80 border-b border-gray-300 pb-2 mb-4">
+      <h2 className="text-[21px] font-bold cambay text-black1/80  border-gray-300 pb-2 mb-4">
         Most Popular
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-5">

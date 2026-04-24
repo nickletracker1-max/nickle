@@ -8,17 +8,6 @@ const SEO = ({ title, description, keywords, canonicalUrl }) => {
       <meta name="keywords" content={keywords} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />
-
-      {/* --- Updated Favicon Section --- */}
-      {/* Ensure this file is moved to your /public folder and named exactly as below */}
-      <link 
-        rel="icon" 
-        type="image/png" 
-        sizes="24x24" 
-        href="/icons8-nickel-65.png" 
-      />
-      {/* ------------------------------- */}
-
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
@@ -30,6 +19,13 @@ const SEO = ({ title, description, keywords, canonicalUrl }) => {
         property="og:url"
         content={canonicalUrl || "https://musical-panda-75f15d.netlify.app/"}
       />
+      <link 
+        rel="icon" 
+        type="image/png" 
+        sizes="24x24" 
+        href="/icons8-nickel-65.png" 
+      />
+      {/* ------------------------------- */}
       <link
         rel="canonical"
         href={canonicalUrl || "https://musical-panda-75f15d.netlify.app/"}

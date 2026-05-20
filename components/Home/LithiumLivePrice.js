@@ -94,7 +94,7 @@ const LithiumLivePrice = () => {
         <div className="w-[35%] md:w-[30%] h-8 md:h-6 lg:h-8">
           <img
             className="w-16 md:w-12 lg:w-28 h-16 md:h-6 lg:h-10 sm:h-10 sm:w-28"
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Nickel Tracker Logo"
           />
         </div>

@@ -1,4 +1,5 @@
 import C101Breadcrumb from "@/components/C101/C101Breadcrumb";
+import { SITE_URL } from "@/lib/siteConfig";
 import { useRouter } from "next/router";
 import cardData from "@/public/static-data/C101CardData"; // Adjust the import path
 import Image from "next/image";
@@ -18,7 +19,7 @@ const DetailPage = ({ card }) => {
         title={`${card.title} - Lithium Alloys Guide & Glossary`}
         description="Explore the world of Copper and its alloys with our comprehensive guide. Learn about copper, brass, bronze, aluminum bronze, nickel silver, and beryllium copper, their properties, uses, and market significance."
         keywords="Lithium 101, Lithium Alloys, copper, brass, bronze, aluminum bronze, nickel silver, beryllium copper, metal properties, copper glossary, industrial metals"
-        canonicalUrl={`https://musical-panda-75f15d.netlify.app/copper101/${card.id}`}
+        canonicalUrl={`${SITE_URL}/copper101/${card.id}`}
       />
       {/* Breadcrumb Component */}
       <C101Breadcrumb link={card.href} title={card.title} />

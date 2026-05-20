@@ -1,4 +1,5 @@
 // import { useRouter } from "next/router";
+import { SITE_URL } from "@/lib/siteConfig";
 // import DataBreadcrumb from "@/components/Data/DataBreadcrumb";
 // import React from "react";
 // import Footer from "@/components/Footer";
@@ -359,7 +360,7 @@ const TableSubpage = () => {
         title={`${table.title} - Data Demand Database & Market Insights`}
         description="Explore detailed market data with our Data Demand Database. Analyze trends, track investments, and gain financial insights."
         keywords="data demand database, market insights, price trends, investment data, financial charts, stock analysis"
-        canonicalUrl={`https://musical-panda-75f15d.netlify.app/DataDemandDatabase/table/${dataId}`}
+        canonicalUrl={`${SITE_URL}/DataDemandDatabase/table/${dataId}`}
       />
 
       <DataBreadcrumb title={table.title} />

@@ -63,16 +63,17 @@ const InvestmentHero = () => {
             </h1>
 
             <p className="text-sm md:text-base mb-10">
-              Discover the potential of Nickel investments through our
-              comprehensive range of investment options. From physical Nickel to
-              ETFs and mining stocks, we offer diverse ways to incorporate this
-              precious metal into your portfolio.
+              Discover nickel investment opportunities through ETFs, mining
+              stocks, and real-time market data. Nickel is the critical
+              industrial metal behind stainless steel (70% of demand) and a
+              growing share of EV battery cathodes — with supply dominated by
+              Indonesia and pricing driven by LME dynamics.
             </p>
 
             <div className="text-xs text-gray-300">
               <p className="text-gray-300">
-                Secure your financial future with timeless value and strategic
-                investments.
+                Track LME prices, Class 1 premiums, and major producers to
+                build an informed nickel investment thesis.
               </p>
             </div>
           </div>

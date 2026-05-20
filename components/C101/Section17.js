@@ -5,7 +5,7 @@ const signals = [
     num: "1",
     signal: "LME warehouse stocks + cancelled warrants",
     what: "Declining stocks combined with rising cancelled warrants = physical demand removing metal from the exchange. The most actionable combination. Either signal alone is noise; both together is signal.",
-    source: { label: "LME official", link: { href: "/nickel/#lme-stocks", label: "Live chart" } },
+    source: { label: "LME official", link: { href: "/data/#lme-stocks", label: "Live chart" } },
     cadence: "Weekly (Friday)",
     priority: "high",
   },
@@ -21,7 +21,7 @@ const signals = [
     num: "3",
     signal: "Chinese NPI monthly production",
     what: "SMM survey of Chinese and Indonesian NPI producers. Rising output = more Class 2 supply, bearish for the Class 1 premium. Two consecutive months of declining output is the single most reliable precursor to an LME price move.",
-    source: { label: "SMM monthly survey", link: { href: "/nickel/#drivers", label: "Live chart" } },
+    source: { label: "SMM monthly survey", link: { href: "/data/#drivers", label: "Live chart" } },
     cadence: "Monthly (~20th)",
     priority: "high",
   },
@@ -37,7 +37,7 @@ const signals = [
     num: "5",
     signal: "Class 1 premium (LME vs NPI spread)",
     what: "LME price minus NPI equivalent on a Ni-content basis. Rising premium = battery demand accelerating, NMC gaining share. Compressing premium = LFP displacement continuing, battery demand weaker than expected.",
-    source: { label: "Calculated daily", link: { href: "/nickel/#class-split", label: "Live chart" } },
+    source: { label: "Calculated daily", link: { href: "/data/#class-split", label: "Live chart" } },
     cadence: "Daily",
     priority: "normal",
   },
@@ -71,7 +71,7 @@ export default function NickelSignalsSection() {
           considerably more informative than the daily LME fix. For current readings on each,
           see the{" "}
           <a
-            href="/nickel/#drivers"
+            href="/data/#drivers"
             className="text-li underline underline-offset-2 hover:opacity-80 transition-opacity"
           >
             live driver dashboard →
@@ -193,7 +193,7 @@ export default function NickelSignalsSection() {
               alongside rising LME warehouse stocks — surplus re-deepening. Check current
               readings for all six on the{" "}
               <a
-                href="/nickel/#drivers"
+                href="/data/#drivers"
                 className="text-li underline underline-offset-2 hover:opacity-80 transition-opacity"
               >
                 live driver dashboard →

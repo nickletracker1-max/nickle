@@ -65,7 +65,8 @@ const Hero = () => {
               <p className="inline-block px-2 py-1 rounded-full text-xs font-semibold bg-accent mb-4">
                 Nickel News
               </p>
-              <h1 className="text-2xl lg:text-4xl font-bold cambay">Loading latest news...</h1>
+              <h1 className="text-2xl lg:text-4xl font-bold cambay">Nickel News</h1>
+              <div className="mt-4 h-6 w-48 bg-white/10 rounded animate-pulse mx-auto" />
             </div>
           </div>
         </div>

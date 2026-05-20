@@ -292,7 +292,6 @@ const Login = () => {
         title="Login - Access Your Account"
         description="Log in to your account to access powerful tools, manage your watchlist, and stay updated with market trends."
         keywords="login, sign in, account access, user login, stock market tools, investment platform"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/auth/login"
       />
 
       <Navbar />

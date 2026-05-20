@@ -13,7 +13,6 @@ const EmailSent = () => {
         title="Email Sent - Confirmation & Next Steps"
         description="Your email has been sent successfully. Check your inbox for confirmation and further instructions."
         keywords="email sent, confirmation, inbox, message delivered, email success, verification email, next steps"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/emailsent"
       />
 
       <main className="flex-grow mt-16">
@@ -23,7 +22,7 @@ const EmailSent = () => {
               <div className="text-center">
                 <div className="relative w-28 h-28 mx-auto mb-6">
                   <Image
-                    src="/logo.jpg"
+                    src="/logo.png"
                     alt="Logo"
                     fill
                     className="object-contain"

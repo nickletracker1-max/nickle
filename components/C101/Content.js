@@ -2,15 +2,15 @@
 import React from "react";
 
 const takeaways = [
-  "Lithium carbonate (LCE) peaked at $80,000/t in November 2022, crashed to $7,800 in February 2024 — an 86% decline — and has partially recovered to ~$11,000 in April 2026.",
-  "The crash was caused by Chinese lepidolite production doubling in 18 months, not by a collapse in EV demand. Demand kept growing throughout the downturn.",
-  "At $11,000/t, roughly 30% of global supply is estimated to be operating below cash cost — primarily Chinese lepidolite. This is the self-correcting mechanism bulls are relying on.",
-  "The supply deficit thesis (IEA, BNEF, BMI) projects the market flipping to shortage in 2026–2027, driving prices to $14,000–$20,000. This forecast has been pushed back twice since 2022.",
-  "Unlike gold or copper, there is no exchange-traded lithium market. You cannot buy a lithium ETF that tracks the spot price directly — LIT holds mining and chemicals companies, not the metal.",
-  "The signals that matter most are Wuxi warehouse stocks (weekly), the SC6→LCE refinery margin (daily), and Chinese battery maker inventory days on hand (monthly).",
-  "LFP batteries (using carbonate) now represent ~65% of new EV production — up from 30% in 2020. This is structurally bullish for LCE demand vs LiOH.",
-  "Australia (Greenbushes, Pilgangoora) produces 38% of global lithium. Chile (Atacama brine) produces 20%. China produces 18% but refines 65–75% of global battery-grade chemicals.",
-  "The IRA's 45X tax credit and Critical Minerals Agreements with Australia are reshaping the supply chain — Australian spodumene is now IRA-qualifying; Chinese-processed chemicals are not.",
+  "In March 2022, the Tsingshan short squeeze drove LME nickel to $101,365/t — the exchange cancelled $3.9 billion in trades and suspended the market for over a week. It remains the most dramatic event in industrial metals history.",
+  "Nickel splits into two distinct markets: Class 1 (LME-deliverable refined nickel, used in batteries and plating) and Class 2 (NPI and ferronickel, used almost exclusively in stainless steel). They trade at a significant premium/discount to each other.",
+  "Indonesia now accounts for over 50% of global nickel mine supply, up from near zero in 2010. The country's RKAB quota system gives it direct control over global supply volumes — making Indonesian policy the single biggest price driver.",
+  "LFP (lithium iron phosphate) batteries are bearish for nickel demand, not bullish. LFP uses no nickel. As LFP takes share in EVs — now ~65% of new EV production in China — nickel's battery demand growth story weakens.",
+  "Stainless steel accounts for approximately 70% of global nickel demand. EV batteries represent ~9%. The clean-energy narrative overstates nickel's battery exposure; it is primarily an industrial metal tied to construction and manufacturing.",
+  "LME warehouse stocks are the key weekly signal. When stocks fall below 100,000 t the market tightens rapidly; the 2022 squeeze occurred with stocks near historic lows. Current stocks: 183,000 t.",
+  "New Caledonia's nickel industry has been in crisis since 2024, with major smelters curtailing output. This is removing Class 1 supply from the market and supporting the LME-to-NPI premium.",
+  "NPI (nickel pig iron) is China's low-cost alternative to Class 1 refined nickel for stainless steel. NPI is produced from Indonesian limonite ore and trades at a discount to LME. The NPI price sets the floor for stainless mill economics.",
+  "HPAL (High-Pressure Acid Leach) processing can upgrade Indonesian laterite ore to battery-grade mixed hydroxide precipitate (MHP), bridging the Class 2/Class 1 divide. HPAL project ramp-up is the key long-term supply variable for battery nickel.",
 ];
 
 const tocItems = [
@@ -39,10 +39,10 @@ const tocItems = [
 ];
 
 const priceStrip = [
-  { label: "LCE China Spot", value: "$11,000", unit: "/t", sub: "86% below ATH · SMM assessed", color: "text-li" },
-  { label: "Spodumene SC6", value: "$800", unit: "/t", sub: "CIF China · Fastmarkets weekly", color: "text-white" },
-  { label: "LiOH 56.5%", value: "$13,500", unit: "/t", sub: "+$2,500 premium to LCE", color: "text-white" },
-  { label: "Refinery Margin", value: "+$3,880", unit: "/t", sub: "LCE minus SC6×8.9 · Daily", color: "text-grn" },
+  { label: "LME Nickel Spot", value: "$15,500", unit: "/t", sub: "LME Cash · Updated daily", color: "text-accent" },
+  { label: "NPI China", value: "$13,200", unit: "/t", sub: "Nickel pig iron · SMM assessed", color: "text-white" },
+  { label: "Class 1 Premium", value: "+$2,300", unit: "/t", sub: "LME vs NPI spread", color: "text-grn" },
+  { label: "LME Stocks", value: "183,000", unit: " t", sub: "LME warehouse · Weekly", color: "text-white" },
 ];
 
 export default function Content() {
@@ -53,7 +53,7 @@ export default function Content() {
         <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 py-2 text-xs text-muted" aria-label="Breadcrumb">
           <a href="/" className="text-muted hover:underline">Home</a>
           {" › "}
-          <a href="/nickel/" className="text-muted hover:underline">Nickel Data</a>
+          <a href="/data/" className="text-muted hover:underline">Nickel Data</a>
           {" › Nickel Investing 101"}
         </div>
       </div>
@@ -64,18 +64,20 @@ export default function Content() {
 
         <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 relative pt-12 md:pt-16 pb-12 md:pb-16">
           <p className="text-xs font-semibold tracking-[.15em] uppercase text-white/30 mb-3">
-            <span className="text-li">LCE $11,000/t · SC6 $800/t</span>
-            {" · "}ATH $80,000 (Nov 2022){" · "}Updated April 14, 2026
+            <span className="text-accent">LME $15,500/t · NPI $13,200/t</span>
+            {" · "}Class 1 Premium +$2,300{" · "}Updated April 14, 2026
           </p>
           <h1 className="text-[clamp(28px,4.5vw,46px)] font-bold text-white leading-tight mb-2.5">
-            How to Invest in <em className="italic text-accent-light">Lithium</em>
+            How to Invest in Nickel
           </h1>
           <p className="text-sm text-white/50 max-w-2xl leading-loose mb-8">
-            Lithium crashed 86% from its $80,000/t peak. It is now sitting near the estimated
-            cash cost for Chinese lepidolite — the marginal producer. If you are trying to decide
-            whether that makes it a buying opportunity or a value trap, the answer depends on one
-            question: do you believe the supply deficit arrives on schedule? This guide explains
-            the mechanics honestly, including what the bulls get wrong.
+            Nickel has one of the most dramatic price histories of any industrial metal — a short
+            squeeze on the LME in March 2022 drove prices to $100,000/t before trades were
+            cancelled. Today the metal sits at $15,500/t, split between two distinct markets:
+            Class 1 (LME-deliverable, used in batteries) and Class 2 (NPI and ferronickel, used
+            in stainless steel). Indonesia now dominates supply, accounting for over 50% of global
+            output. This guide explains the mechanics, the investment options, and what signals
+            actually matter.
           </p>
           <div className="flex gap-5 flex-wrap mb-7">
             <span className="text-sm text-white/30">📅 April 14, 2026</span>
@@ -107,13 +109,13 @@ export default function Content() {
           {/* DATA BANNER */}
           <div className="bg-ink rounded-xl p-4 md:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border border-blue-300/20">
             <div>
-              <p className="text-xs font-bold tracking-widest uppercase text-li mb-1">⚡️ Live Lithium Data</p>
-              <p className="text-sm font-bold text-white mb-0.5">28 charts · LCE, SC6, LiOH, Wuxi inventory, cost curve, pipeline</p>
-              <p className="text-xs text-white/30">Prices, spreads, refinery margin, supply vs demand balance</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-accent mb-1">⚡️ Live Nickel Data</p>
+              <p className="text-sm font-bold text-white mb-0.5">LME spot, NPI, Class 1 premium, LME warehouse stocks, RKAB, NPI monthly output</p>
+              <p className="text-xs text-white/30">Prices, spreads, Class 1 premium, supply vs demand balance</p>
             </div>
             <a
-              href="/lithium/"
-              className="shrink-0 bg-li hover:opacity-85 text-white font-semibold rounded-lg text-sm px-5 py-2.5 no-underline"
+              href="/data/"
+              className="shrink-0 bg-accent hover:opacity-85 text-white font-semibold rounded-lg text-sm px-5 py-2.5 no-underline"
             >
               See live data →
             </a>

@@ -16,18 +16,8 @@ const LithiumPrice = () => {
     getData();
   }, []);
 
-  // If lithiumData is not yet available, render a loading state
   if (!lithiumData) {
-    return (
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 mt-4 rounded-lg max-w-3xl">
-        <div className="text-center text-red-400">
-          <p>CME lithium spot price data unavailable</p>
-          <p className="text-sm text-gray-400">
-            Real-time data only - no fallback data
-          </p>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   const price = lithiumData.price ? parseFloat(lithiumData.price) : 0;

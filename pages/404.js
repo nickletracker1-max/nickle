@@ -11,7 +11,6 @@ export default function Custom404() {
         title="Page Not Found - Lithium Tracker"
         description="Oops! The page you're looking for doesn’t exist. Get back on track with the latest Lithium and Lithium Alloys market updates and insights."
         keywords="404, page not found, Lithium market, Lithium prices, Lithium tracker"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/404"
       />
       <motion.div
         initial={{ opacity: 0, y: -50 }}

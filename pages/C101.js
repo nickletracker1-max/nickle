@@ -27,10 +27,9 @@ const C101 = () => {
   return (
     <div>
       <SEO
-        title="Nickel 101 - Nickel Alloys Guide & Glossary"
-        description="Explore the world of Nickel and its alloys with our comprehensive guide. Learn about lithium, brass, bronze, aluminum bronze, nickel silver, and beryllium lithium, their properties, uses, and market significance."
-        keywords="Nickel 101, Nickel Alloys, lithium, brass, bronze, aluminum bronze, nickel silver, beryllium lithium, metal properties, lithium glossary, industrial metals"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/C101"
+        title="How to Invest in Nickel — Complete 2026 Guide"
+        description="A complete guide to nickel investing: LME Class 1 vs NPI Class 2, Indonesian supply dominance, the Tsingshan short squeeze, stainless steel demand, and how to invest via ETFs and mining stocks."
+        keywords="nickel investing, nickel price, LME nickel, NPI nickel, Class 1 nickel, nickel ETF, nickel stocks, nickel market, how to invest in nickel, nickel guide"
       />
       <Navbar />
       <div className='flex flex-col divide-y divide-bdr pt-20'>

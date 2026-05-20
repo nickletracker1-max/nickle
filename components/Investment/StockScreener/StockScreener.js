@@ -152,7 +152,7 @@ const StockScreener = ({ stockData = [] }) => {
   const totalPages = Math.ceil(filteredData.length / PAGE_SIZE);
 
   if (loading) {
-    return <div className="text-black1">Loading...</div>;
+    return null;
   }
 
   if (error) {

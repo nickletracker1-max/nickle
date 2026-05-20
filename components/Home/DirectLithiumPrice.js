@@ -110,7 +110,7 @@ const DirectNickelPrice = () => {
         <div className="h-8 md:h-6 lg:h-8">
           <img
             className="w-16 md:w-10 2xl:w-26 h-10 md:h-6 lg:h-10 lg:w-20 sm:h-10 sm:w-28"
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Nickel Tracker Logo"
           />
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { MdEmail } from "react-icons/md";
+import { SITE_EMAIL, SITE_COPYRIGHT, LOGO_PATH } from "@/lib/siteConfig";
 
 const Footer2 = () => {
   return (
@@ -11,7 +12,7 @@ const Footer2 = () => {
           {/* Added margin-bottom (mb-6) for spacing */}
           <Image
             className="" // Adjusting size for different screens
-            src="/logo.jpg"
+            src={LOGO_PATH}
             alt="Logo"
             width={140} // Adjust as per image dimensions
             height={10}
@@ -23,7 +24,7 @@ const Footer2 = () => {
         <div className="flex flex-wrap justify-center items-center space-x-2 text-sm md:text-base">
           <MdEmail className="text-lg md:text-xl" />{" "}
           {/* Icon size adjusts with screen */}
-          <span>info@pgmtracker.com</span>
+          <span>{SITE_EMAIL}</span>
         </div>
 
         {/* Divider */}
@@ -31,7 +32,7 @@ const Footer2 = () => {
 
         {/* Bottom Links */}
         <div className="text-xs md:text-sm lg:text-base flex flex-wrap justify-center space-x-2">
-          <span>© 2026 Nickel Tracker</span>
+          <span>{SITE_COPYRIGHT}</span>
           <span>|</span>
           <span className="cursor-pointer hover:underline">Privacy Policy</span>
           <span>|</span>

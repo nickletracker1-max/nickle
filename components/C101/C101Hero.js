@@ -29,10 +29,11 @@ const C101Hero = () => {
             </h1>
 
             <p className="text-sm md:text-base mb-6">
-              Get started with our comprehensive guide to lithium markets. From
+              Get started with our comprehensive guide to nickel markets. From
               fundamental concepts to advanced market analysis, discover
-              everything you need to know about this essential metal's role in
-              the global economy and renewable energy transition.
+              everything you need to know about this essential industrial
+              metal's role in stainless steel, EV batteries, and global supply
+              dynamics.
             </p>
 
             <div className="text-xs text-gray-300">

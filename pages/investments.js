@@ -114,7 +114,6 @@ const investments = ({ stockData }) => {
         title="Nickel Investment Insights - Market Trends & Stock Analysis"
         description="Explore in-depth Nickel investment insights, stock analysis, and the latest market trends. Stay informed about financial updates, ETF holdings, insider transactions, and stock screening tools to make better investment decisions."
         keywords="Nickel investment insights, stock market trends, ETF holdings, stock analysis, insider transactions, stock screener, market updates, investment strategies, Nickel investments"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/investments"
       />
 
       <Navbar />

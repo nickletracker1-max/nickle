@@ -32,7 +32,7 @@ const WhereNowNickel = () => {
         </p>
         <p className="text-[15px] leading-[1.82] text-ink3 mb-8">
           The live data below pulls directly from the{' '}
-          <a href="/nickel/" className="text-[#15803D] hover:underline">Nickel Data page</a>,
+          <a href="/data/" className="text-[#15803D] hover:underline">Nickel Data page</a>,
           which updates daily. The structural analysis in this guide — AISC comparisons, deficit
           timing, RKAB mechanics — is what belongs in a 101 guide. The specific prices and
           inventory readings belong over there.
@@ -51,7 +51,7 @@ const WhereNowNickel = () => {
               Live nickel market snapshot
             </p>
             <a
-              href="/nickel/"
+              href="/data/"
               className="text-[12px] font-semibold text-[#15803D] hover:underline"
             >
               Full data page →
@@ -75,7 +75,7 @@ const WhereNowNickel = () => {
           {/* Source */}
           <p className="text-[10px] text-muted px-4 py-2 border-t border-bdr">
             Data: LME official settlement + SMM NPI assessment · Updated daily ·{' '}
-            <a href="/nickel/#lme-stocks" className="text-[#15803D] hover:underline">
+            <a href="/data/#lme-stocks" className="text-[#15803D] hover:underline">
               LME warehouse detail →
             </a>
           </p>

@@ -81,7 +81,7 @@ const StayAhead = () => {
             href="/C101/"
             className="bg-white hover:bg-white/90 lg:bg-white lg:hover:bg-white/90 text-center text-accent font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded w-full text-sm"
           >
-            C101 page
+            Nickel 101 — Complete Investing Guide
           </Link>
         </div>
 

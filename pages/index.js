@@ -29,7 +29,6 @@ const home = () => {
         title="Nickel Tracker - Real-time News, Prices & Analysis"
         description="Stay ahead with real-time Nickel market news, price updates, and in-depth analysis."
         keywords="Nickel prices, Nickel news, Nickel market analysis"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/"
       />
 
       <Navbar />

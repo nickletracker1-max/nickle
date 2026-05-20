@@ -5,13 +5,13 @@ const conditions = [
     num: "1",
     title: "LME warehouse stocks declining for 12+ weeks consistently",
     desc: "Physical demand drawing down supply faster than new deliveries.",
-    link: { href: "/nickel/#lme-stocks", label: "Live warehouse stocks" },
+    link: { href: "/data/#lme-stocks", label: "Live warehouse stocks" },
   },
   {
     num: "2",
     title: "Cancelled warrants above 15% and rising",
     desc: "Metal leaving the exchange, indicating real physical consumption.",
-    link: { href: "/nickel/#lme-stocks", label: "Live cancelled warrants" },
+    link: { href: "/data/#lme-stocks", label: "Live cancelled warrants" },
   },
   {
     num: "3",
@@ -23,7 +23,7 @@ const conditions = [
     num: "4",
     title: "NPI monthly output declining for 2+ consecutive months",
     desc: "The supply side showing genuine curtailment.",
-    link: { href: "/nickel/#drivers", label: "SMM monthly NPI survey" },
+    link: { href: "/data/#drivers", label: "SMM monthly NPI survey" },
   },
   {
     num: "5",
@@ -99,7 +99,7 @@ export default function TimingSection() {
               When SMM's monthly NPI survey shows two consecutive months of declining output,
               that is historically the most reliable precursor to a sustained LME price move.{" "}
               <a
-                href="/nickel/#drivers"
+                href="/data/#drivers"
                 className="text-li underline underline-offset-2 hover:opacity-80 transition-opacity"
               >
                 Check current readings on the live signal dashboard →

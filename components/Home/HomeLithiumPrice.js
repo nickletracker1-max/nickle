@@ -32,12 +32,8 @@ const HomeLithiumPrice = () => {
     fetchPrices();
   }, []);
 
-  if (loading) {
-    return <div className="text-center py-4">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="text-center py-4 text-red-500">Error: {error}</div>;
+  if (loading || error) {
+    return null;
   }
 
   const formatValue = (value) => {

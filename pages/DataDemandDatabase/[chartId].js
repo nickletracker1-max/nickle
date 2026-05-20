@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { SITE_URL } from "@/lib/siteConfig";
 import DataBreadcrumb from "@/components/Data/DataBreadcrumb";
 import React from "react";
 import Footer from "@/components/Footer";
@@ -15,7 +16,7 @@ const ChartSubpage = ({ chart }) => {
         title={`${chart.title} - Data Demand Database & Market Insights`}
         description={chart.description}
         keywords="data demand database market insights, price trends, investment data, financial charts, stock analysis"
-        canonicalUrl={`https://musical-panda-75f15d.netlify.app/DataDemandDatabase/${chart.id}`}
+        canonicalUrl={`${SITE_URL}/DataDemandDatabase/${chart.id}`}
       />
       <DataBreadcrumb title={chart.title} />
       <div className="px-6 py-10 md:px-20 mt-14 mb-10">

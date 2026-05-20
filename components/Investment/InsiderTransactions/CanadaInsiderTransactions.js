@@ -178,8 +178,7 @@ const InvestmentsCanadaInsiderTransaction = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error fetching data: {error.message}</p>;
+  if (loading || error) return null;
 
   return (
     <div className="bg-accent/10 p-2 py-4 md:p-8 rounded-md mb-7">

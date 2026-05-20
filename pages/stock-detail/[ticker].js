@@ -230,7 +230,6 @@ const StockDetailPage = () => {
           title="Stock Not Found"
           description="Stock Not Found"
           keywords="stock details, market insights, stock analysis, stock performance, investment, financial data, stock trends"
-          canonicalUrl="https://musical-panda-75f15d.netlify.app/stock-detail"
         />
         <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4">
           <div className="text-center">
@@ -258,7 +257,6 @@ const StockDetailPage = () => {
         title="Stock Details - Market Insights & Analysis"
         description="Get in-depth stock details, real-time market data, historical performance, and expert analysis to make informed investment decisions."
         keywords="stock details, market insights, stock analysis, stock performance, investment, financial data, stock trends"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/stock-detail"
       />
       <Navbar />
       <div className="flex flex-col md:flex-row justify-between px-2 md:px-12 my-10 pb-20 mt-24">

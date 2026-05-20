@@ -32,7 +32,6 @@ const Data = () => {
         title="Nickel Market Data - Price Trends, Supply & Demand Insights"
         description="Access comprehensive Nickel market data, including price trends, supply and demand metrics, and industry analysis. Our detailed datasets provide the insights you need for informed decision-making in the Nickel market."
         keywords="Nickel market data, price trends, Nickel supply and demand, industry analysis, Nickel research, market insights, Nickel and Nickel Alloys, data analytics"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/data"
       />
       <Navbar />
       

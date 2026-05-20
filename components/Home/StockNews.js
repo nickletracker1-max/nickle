@@ -198,14 +198,7 @@ const StockNews = () => {
   };
 
   if (loading) {
-    return (
-      <div>
-        <h1 className="text-[21px] cambay font-bold mb-5 border-b border-black/10 pb-2">
-          Nickel Stock News
-        </h1>
-        <div className="text-center py-8">Loading stock news...</div>
-      </div>
-    );
+    return null;
   }
 
   if (error) {

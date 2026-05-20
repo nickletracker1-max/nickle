@@ -27,6 +27,21 @@ const Footer2 = () => {
           <span>{SITE_EMAIL}</span>
         </div>
 
+        {/* Tracker Links */}
+        <div className="text-xs md:text-sm lg:text-base flex flex-wrap justify-center gap-x-3 gap-y-1">
+          <a href="https://www.lithiumtracker.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Lithium Tracker</a>
+          <span>|</span>
+          <a href="https://www.coppertracker.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Copper Tracker</a>
+          <span>|</span>
+          <a href="https://www.nickelmetaltracker.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Nickel Metal Tracker</a>
+          <span>|</span>
+          <a href="https://www.uraniumtracker.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Uranium Tracker</a>
+          <span>|</span>
+          <a href="https://www.pgmtracker.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">PGM Tracker</a>
+          <span>|</span>
+          <a href="https://www.goldandsilvertracker.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Gold &amp; Silver Tracker</a>
+        </div>
+
         {/* Divider */}
         <div className="w-full md:w-2/3 lg:w-1/2 mx-auto border-t border-white/40 my-4"></div>
 

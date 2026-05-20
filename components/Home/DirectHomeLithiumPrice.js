@@ -1,95 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { FaLink } from "react-icons/fa6";
 import CardSkeleton from "@/components/CardSkeleton";
+import axios from "axios";
 
 const DirectHomeLithiumPrice = () => {
   const [lithiumPrices, setLithiumPrices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchPricesFromDatabase = async () => {
-      try {
-        setLoading(true);
-        
-        // Fetch metal prices from our database API
-        const response = await fetch('/api/lithium-prices');
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        
-        if (!data.success || !data.data) {
-          throw new Error('No metal price data available from database');
-        }
-        
-        // Ensure data.data is an array
-        const dataArray = Array.isArray(data.data) ? data.data : [data.data];
-        
-        if (dataArray.length === 0) {
-          throw new Error('No metal price data available from database');
-        }
-        
-        // Transform database data to component format
-        const metalPrices = dataArray.map(item => ({
-          metal_name: item.metal_name,
-          price: parseFloat(item.price),
-          price_change: parseFloat(item.price_change),
-          price_change_percent: parseFloat(item.price_change_percent),
-          // source: "Database API"
-        }));
-        
-        setLithiumPrices(metalPrices);
-        
-      } catch (err) {
-        console.error('Error fetching prices from database:', err);
-        setError(err.message);
-        
-        // Fallback to mock data
-        const fallbackData = [
-          {
-            metal_name: "Lithium",
-            price: 4.15,
-            price_change: -0.08,
-            price_change_percent: -1.89,
-            source: "Fallback"
-          },
-          {
-            metal_name: "Aluminum", 
-            price: 0.91,
-            price_change: -0.02,
-            price_change_percent: -1.51,
-            source: "Fallback"
-          },
-          {
-            metal_name: "Nickel",
-            price: 8.51,
-            price_change: -0.16,
-            price_change_percent: -2.27,
-            source: "Fallback"
-          },
-          {
-            metal_name: "Zinc",
-            price: 1.25,
-            price_change: -0.02,
-            price_change_percent: -1.70,
-            source: "Fallback"
-          }
-        ];
-        setLithiumPrices(fallbackData);
-      } finally {
-        setLoading(false);
-      }
-    };
+   useEffect(() => {
+     const fetchPricesFromDatabase = async () => {
+       try {
+         setLoading(true);
 
-    fetchPricesFromDatabase();
-    
-    // Refresh every 2 minutes
-    const interval = setInterval(fetchPricesFromDatabase, 2 * 60 * 1000);
-    return () => clearInterval(interval);
-  }, []);
+         const response = await axios("/api/lithium-prices");
+
+         if (!response.data) {
+           console.warn(
+             `Lithium prices API returned ${response.status} — showing empty state`,
+           );
+           setLithiumPrices([]);
+           setLoading(false);
+           return;
+         }
+
+         const data = response.data;
+         const metalPrices = data.slice(0, 4).map((item) => ({
+           metal_name: item.metal_name,
+           price: parseFloat(item.price),
+           price_change: parseFloat(item.price_change),
+           price_change_percent: parseFloat(item.price_change_percent),
+         }));
+
+         setLithiumPrices(metalPrices);
+       } catch (err) {
+         console.error("Error fetching prices from database:", err);
+         setError(err.message);
+
+         setLithiumPrices([]);
+       } finally {
+         setLoading(false);
+       }
+     };
+
+     fetchPricesFromDatabase();
+
+     // Refresh every 2 minutes
+     const interval = setInterval(fetchPricesFromDatabase, 2 * 60 * 1000);
+     return () => clearInterval(interval);
+   }, []);
+
 
   const formatValue = (value) => {
     if (value === null || value === undefined || isNaN(value)) {
@@ -106,36 +66,33 @@ const DirectHomeLithiumPrice = () => {
 
   const renderRow = (metalData) => (
     <tr className="text-sm hover:bg-accent/10" key={metalData.metal_name}>
-      <td className="border-t px-4 py-2 font-sm">
-        {metalData.metal_name}
-      </td>
+      <td className="border-t px-4 py-2 font-sm">{metalData.metal_name}</td>
       <td className="border-t px-4 py-3">${formatValue(metalData.price)}</td>
       <td
         className={`border-t px-4 py-3 ${getChangeClass(
-          parseFloat(metalData.price_change)
+          parseFloat(metalData.price_change),
         )}`}
       >
         {metalData.price_change > 0
           ? `$+${formatValue(metalData.price_change)}`
           : metalData.price_change < 0
-          ? `${formatValue(metalData.price_change)}`
-          : `$0.0000`}
+            ? `${formatValue(metalData.price_change)}`
+            : `$0.0000`}
       </td>
       <td
         className={`border-t px-4 py-3 ${getChangeClass(
-          parseFloat(metalData.price_change_percent)
+          parseFloat(metalData.price_change_percent),
         )}`}
       >
         {formatValue(metalData.price_change_percent)}%
       </td>
-
     </tr>
   );
 
   if (loading) {
     return (
       <div className="text-center py-4">
-        <CardSkeleton/>
+        <CardSkeleton />
       </div>
     );
   }
@@ -172,13 +129,13 @@ const DirectHomeLithiumPrice = () => {
           )}
         </tbody>
       </table>
-      
+
       {error && (
         <div className="mt-2 text-xs text-orange-600 text-center">
           Note: Some data may be simulated due to API restrictions
         </div>
       )}
-      
+
       <div className="mt-2 text-xs text-gray-500 text-center">
         Last updated: {new Date().toLocaleTimeString()} • Auto-refresh: 2 min
       </div>

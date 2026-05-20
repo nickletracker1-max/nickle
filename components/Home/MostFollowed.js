@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { MOST_FOLLOWED, LITHIUM_STOCK_DETAIL } from "@/src/api/lithiumAPI";
 import { useRouter } from "next/navigation";
@@ -21,12 +19,15 @@ const MostFollowed = () => {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
+        console.log("jabsvbxhbasv", data.data.most_watched);
         // Ensure data is an array before calling slice
-        const dataArray = Array.isArray(data) ? data : [];
-        setStockData(dataArray.slice(0, 10)); // Limit to 10 stocks
+        const dataArray = Array.isArray(data.data.most_watched)
+          ? data.data.most_watched
+          : [];
+        setStockData(dataArray.slice(0, 10));
       } catch (err) {
         setError(err.message);
-        setStockData([]); // Set empty array on error
+        setStockData([]);
       } finally {
         setLoading(false);
       }
@@ -38,7 +39,7 @@ const MostFollowed = () => {
   const checkSubpageExists = async (stockTicker) => {
     try {
       const response = await axios.get(
-        `${LITHIUM_STOCK_DETAIL}?stock_ticker=${stockTicker}`
+        `${LITHIUM_STOCK_DETAIL}?stock_ticker=${stockTicker}`,
       );
       return response.data.exists ?? true;
     } catch (error) {
@@ -95,7 +96,7 @@ const MostFollowed = () => {
             {stockData
               .sort(
                 (a, b) =>
-                  (b.intraday_percentage || 0) - (a.intraday_percentage || 0)
+                  (b.intraday_percentage || 0) - (a.intraday_percentage || 0),
               ) // Sort by intraday percentage
               .map((stock) => (
                 <tr
@@ -112,7 +113,9 @@ const MostFollowed = () => {
                     <div className="text-gray-500">{stock.name || "N/A"}</div>
                   </td>
                   <td className="py-2 text-right">
-                    <div>${parseFloat(stock.current_price || 0).toFixed(2)}</div>
+                    <div>
+                      ${parseFloat(stock.current_price || 0).toFixed(2)}
+                    </div>
                     <div
                       className={`${
                         parseFloat(stock.intraday_percentage || 0) < 0

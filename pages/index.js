@@ -15,7 +15,6 @@ import DailyNewsletterAd from "@/components/Home/DailyNewsletterAd";
 import Footer from "@/components/Footer";
 import TVLithiumCFD from "@/components/Home/TVLithiumCFD";
 import TVLithium from "@/components/Home/TVLithium";
-import DirectLithiumPrice from "@/components/Home/DirectLithiumPrice";
 import DirectHomeLithiumPrice from "@/components/Home/DirectHomeLithiumPrice";
 import HomeInsiderTransactions from "@/components/Home/HomeInsiderTransactions";
 import SEO from "@/components/SEO";
@@ -87,9 +86,6 @@ const home = () => {
           <div className="lg:col-span-3 flex flex-col items-stretch space-y-8 w-full">
             <div className="border border-black/10 p-3 mr-2 rounded-xl">
               <Substacks />
-            </div>
-            <div className="border border-black/10 p-3 mr-2 rounded-xl">
-              <DirectLithiumPrice />
             </div>
             <div className="border border-black/10 p-3 mr-2 rounded-xl">
               <PopularIntradayReturn />

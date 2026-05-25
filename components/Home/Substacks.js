@@ -1,165 +1,120 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { SUBSTACKS } from "@/src/api/lithiumAPI";
 import CardSkeleton from "@/components/CardSkeleton";
 
 const Substacks = () => {
-  const [substackPosts, setSubstackPosts] = useState([]);
+  const [posts, setPosts]     = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  // Function to truncate content
-  const truncateContent = (content) => {
-    if (!content) return "";
-    const cleanContent = content.replace(/<[^>]*>/g, "");
-    const words = cleanContent.split(/\s+/).slice(0, 15);
-    return words.length > 0 ? `${words.join(" ")}...` : "";
-  };
-
-  // Intelligent title truncation function
-  const formatTitle = (title) => {
-    if (!title) return "Untitled";
-    if (title.length <= 70) return title;
-    return `${title.substring(0, 70)}...`;
-  };
-
-  // Format date function
-  const formatDate = (dateString) => {
-    if (!dateString) return '';
-    try {
-      return new Date(dateString).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-    } catch (error) {
-      console.warn("Invalid date format:", dateString);
-      return '';
-    }
-  };
+  const [error, setError]     = useState(null);
 
   useEffect(() => {
-    const fetchSubstacks = async () => {
+    const fetchFeeds = async () => {
       try {
-        console.log('Fetching substacks from:', SUBSTACKS);
-        const response = await fetch(SUBSTACKS);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log('Substacks data:', data);
-        
-        const formattedPosts = Array.isArray(data) 
-          ? data.map((post) => ({
-              id: post.id || Math.random().toString(36).substr(2, 9),
-              title: formatTitle(post.title) || "Untitled Substack Post",
-              url: post.url || "#",
-              content: truncateContent(post.content),
-              subtitle: post.subtitle || "",
-              image: post.image_url || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM4sEG5g9GFcy4SUxbzWNzUTf1jMISTDZrTw&s",
-              date: formatDate(post.date || post.created_at),
-            }))
-          : [];
-
-        setSubstackPosts(formattedPosts);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching substacks:", error);
-        setError(error.message);
-        setSubstackPosts([]);
+        const res = await fetch("/api/nickel-substacks");
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        setPosts(data.items || []);
+      } catch (err) {
+        console.error("Substacks RSS error:", err);
+        setError(err.message);
+      } finally {
         setLoading(false);
       }
     };
-
-    fetchSubstacks();
+    fetchFeeds();
   }, []);
+
+  const header = (
+    <h2 className="text-[19px] md:text-[21px] font-bold cambay border-b border-gray-200 pb-2 mb-4">
+      Nickel Substacks
+    </h2>
+  );
 
   if (loading) {
     return (
       <div>
-        <h2 className="flex items-center text-[19px] md:text-[21px] font-bold cambay border-b border-gray-300 pb-1 mb-3">
-          Nickel Substacks
-        </h2>
-        <CardSkeleton/>
+        {header}
+        <CardSkeleton />
       </div>
     );
   }
 
-  if (error) {
+  if (error || posts.length === 0) {
     return (
       <div>
-        <h2 className="flex items-center text-[19px] md:text-[21px] font-bold cambay border-b border-gray-300 pb-1 mb-3">
-          Nickel Substacks
-        </h2>
-        <div className="text-center py-8 text-red-500">
-          Error loading substacks: {error}
-        </div>
-      </div>
-    );
-  }
-
-  if (substackPosts.length === 0) {
-    return (
-      <div>
-        <h2 className="flex items-center text-[19px] md:text-[21px] font-bold cambay border-b border-gray-300 pb-1 mb-3">
-          Nickel Substacks
-        </h2>
-        <div className="text-center py-8 text-gray-500">
-          No Substack posts available at this time
-        </div>
+        {header}
+        <p className="text-center py-8 text-gray-400 text-sm">
+          {error ? `Could not load feeds: ${error}` : "No posts available right now."}
+        </p>
       </div>
     );
   }
 
   return (
     <div>
-      <h2 className="flex items-center text-[19px] md:text-[21px] font-bold cambay border-b border-gray-300 pb-1 mb-3">
-        Nickel Substacks
-      </h2>
-      <div className="space-y-6">
-        {substackPosts.slice(0, 4).map((post) => (
-          <Link
-            key={post.id}
+      {header}
+
+      <div className="space-y-4">
+        {posts.map((post, i) => (
+          <a
+            key={i}
             href={post.url}
             target="_blank"
-            className="flex items-start justify-between space-x-4 pb-4 cursor-pointer group border-b border-gray-100 last:border-b-0"
+            rel="noopener noreferrer"
+            className="flex items-start justify-between gap-3 pb-4 border-b border-gray-100 last:border-b-0 group"
           >
-            <div className="flex flex-col flex-grow">
-              <p className="text-xs font-semibold text-accent mb-1">
-                Substack
+            {/* Text */}
+            <div className="flex-1 min-w-0">
+              {/* Source name */}
+              <p className="text-[11px] font-semibold text-accent mb-1 truncate">
+                {post.source}
               </p>
-              
-              <h3 className="text-md font-bold text-gray-800 mt-1 group-hover:text-accent transition-colors">
+
+              {/* Title */}
+              <h3 className="text-[13.5px] font-bold text-gray-900 leading-snug group-hover:text-accent transition-colors line-clamp-2">
                 {post.title}
               </h3>
-              
-              {post.content && (
-                <p className="text-sm text-gray-600 mt-1 line-clamp-2">
-                  {post.content}
+
+              {/* Excerpt */}
+              {post.excerpt && (
+                <p className="text-[12px] text-gray-500 mt-1 line-clamp-2 leading-relaxed">
+                  {post.excerpt}
                 </p>
               )}
-              
+
+              {/* Date */}
               {post.date && (
-                <span className="text-xs text-gray-500 mt-2">{post.date}</span>
+                <span className="text-[11px] text-gray-400 mt-1.5 block">
+                  {post.date}
+                </span>
               )}
             </div>
-            
-            <div className="flex-shrink-0">
-              <div className="w-[80px] h-[75px] overflow-hidden rounded-md">
+
+            {/* Thumbnail */}
+            {post.thumbnail && (
+              <div className="flex-shrink-0 w-[68px] h-[64px] rounded-md overflow-hidden bg-gray-100">
                 <img
-                  src={post.image}
-                  alt={post.title ? post.title.substring(0, 10) + "..." : "Substack post"}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform"
-                  onError={(e) => {
-                    e.target.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM4sEG5g9GFcy4SUxbzWNzUTf1jMISTDZrTw&s";
-                  }}
+                  src={post.thumbnail}
+                  alt=""
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                  onError={(e) => { e.target.style.display = "none"; }}
                 />
               </div>
-            </div>
-          </Link>
+            )}
+          </a>
         ))}
+      </div>
+
+      {/* Footer link */}
+      <div className="mt-4 text-right">
+        <a
+          href="https://substack.com/search?q=nickel+metals"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[12.5px] text-accent font-medium hover:underline"
+        >
+          More on Substack →
+        </a>
       </div>
     </div>
   );

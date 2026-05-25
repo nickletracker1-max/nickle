@@ -1,7 +1,7 @@
 
 
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { jwtDecode } from "jwt-decode";
 import Router from "next/router"; // To handle redirection
 import { GetUserData } from "../utils/GetUserData";

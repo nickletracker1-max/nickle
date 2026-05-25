@@ -52,7 +52,7 @@ const ResetPassword = () => {
         keywords="forgot password, password reset, recover account, secure login, reset link, account recovery"
       />
 
-      <main className="flex-grow mt-">
+      <main className="flex-grow mt-[116px]">
         <div className="flex min-h-screen">
           <div className="w-full flex flex-col justify-center px-10">
             <div className="max-w-md mx-auto w-full">

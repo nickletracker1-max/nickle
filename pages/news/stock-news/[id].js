@@ -66,7 +66,7 @@ const StockNewsPage = () => {
   return (
     <>
       <Navbar />
-      <div className="mt-16 w-full flex justify-between px-3 md:px-20 py-8 md:py-16">
+      <div className="mt-[116px] w-full flex justify-between px-3 md:px-20 py-8 md:py-16">
         {/* news  */}
         <div className="w-full md:w-[60%]">
           <h1 className="text-2xl md:text-[1.7rem] font-bold mb-4">

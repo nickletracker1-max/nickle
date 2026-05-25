@@ -32,7 +32,7 @@ const C101 = () => {
         keywords="nickel investing, nickel price, LME nickel, NPI nickel, Class 1 nickel, nickel ETF, nickel stocks, nickel market, how to invest in nickel, nickel guide"
       />
       <Navbar />
-      <div className='flex flex-col divide-y divide-bdr pt-20'>
+      <div className='flex flex-col divide-y divide-bdr pt-[116px]'>
         <Content/>
         <Section1/>
         <Section2/>
@@ -62,5 +62,13 @@ const C101 = () => {
     </div>
   );
 };
+
+// ISR: C101 is pure static educational content — revalidate once per day
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 86400, // 24 hours
+  };
+}
 
 export default C101;

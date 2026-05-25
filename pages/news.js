@@ -17,10 +17,10 @@ const news = () => {
       <SEO
         title="Nickel News - Latest Industry News, Stock Trends & Press Releases"
         description="Stay updated with the latest news on Nickel and Nickel Alloys, featuring company press releases, stock market trends, and real-time industry developments. Get accurate insights into financial updates, market movements, and key events shaping the Nickel sector."
-        keywords="Nickel news,Company Press Releases, Stock news, Market news, Trending stock news,Company news"
+        keywords="Nickel news, Company Press Releases, Stock news, Market news, Trending stock news, Company news"
       />
       <Navbar />
-      <div className="mt-14">
+      <div className="pt-[116px]">
         <Hero />
       </div>
 
@@ -39,15 +39,21 @@ const news = () => {
         </div>
       </div>
 
-      {/* More News Section */}
       <MoreNews />
 
-      {/* Footer Section */}
       <div className="mt-0">
         <Footer />
       </div>
     </div>
   );
 };
+
+// ISR: revalidate every 5 minutes so news stays fresh without a full SSR hit on every request
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 300, // 5 minutes
+  };
+}
 
 export default news;

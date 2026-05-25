@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import YearCalendar from "./YearCalendar";
-import Navbar from "../Navbar";
 import Loader from "../Loader";
 import { CALENDAR } from "@/src/api/lithiumAPI";
 
@@ -46,13 +45,11 @@ const Calendar = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="px-2 md:px-20 mt-[65px] md:mt-[84px]">
-        {/* Pass selectedYear and setSelectedYear to YearCalendar */}
+      <div className="px-2 md:px-20 mt-[116px]">
         <YearCalendar
           calendarData={filteredEvents}
           selectedYear={selectedYear}
-          setSelectedYear={setSelectedYear} // Pass state change function
+          setSelectedYear={setSelectedYear}
         />
       </div>
     </>

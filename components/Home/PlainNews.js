@@ -1,221 +1,20 @@
-// import React, { useState, useEffect } from "react";
-// import { IoTimerOutline } from "react-icons/io5";
-// import axios from "axios";
-// import { COPPER_NEWS } from "@/src/api/lithiumAPI";
-// import Loader from "../Loader";
-
-// const PlainNews = () => {
-//   // const axiosInstance = useAxiosPrivate();
-//   const [newsData, setNewsData] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchNewsData = async () => {
-//       try {
-//         setLoading(true);
-//         const response = await axios.get(`${COPPER_NEWS}?news_type=copper`);
-//         const data = response.data;
-
-//         if (data && Array.isArray(data) && data.length > 0) {
-//           setNewsData(data);
-//         } else {
-//           setNewsData([]);
-//         }
-//       } catch (err) {
-//         setError("Failed to fetch news data");
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchNewsData();
-//   }, []);
-
-//   // Function to format the date
-//   const formatDate = (dateString) => {
-//     const date = new Date(dateString);
-//     return date.toLocaleDateString("en-US", {
-//       year: "numeric",
-//       month: "short",
-//       day: "numeric",
-//     });
-//   };
-
-//   if (loading) {
-//     return (
-//       <div>
-//         <Loader />
-//       </div>
-//     );
-//   }
-
-//   if (error) {
-//     return <div>{error}</div>;
-//   }
-
-//   if (!newsData || newsData.length === 0) {
-//     return <div>No data available</div>;
-//   }
-
-//   return (
-//     <div>
-//       <div className="">
-//         <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
-//           Latest Platinum News
-//         </h1>
-
-//         <div className="flex flex-wrap md:flex-nowrap gap-5">
-//           <div className="w-full grid grid-cols-1 gap-3">
-//             {newsData.slice(0, 10).map((news, index) => (
-//               <a
-//                 key={index}
-//                 target="_blank"
-//                 href={news.url}
-//                 className="bg-white border-b border-black/10 pb-4 rounded-sm overflow-hidden block group transition-shadow duration-300"
-//               >
-//                 <div>
-//                   <h2 className="group-hover:underline text-[16px] md:text-[17px] text-primary mt-1 leading-6">
-//                     {news.title}
-//                   </h2>
-//                   <p className="text-gray-500 text-xs mt-2 flex gap-x-1.5 items-center">
-//                     {/* <span>
-//                       <IoTimerOutline className="text-sm" />
-//                     </span>{" "} */}
-//                     {news.date && formatDate(news.date)}{" "}
-//                     {/* Format and display date */}
-//                   </p>
-//                 </div>
-//               </a>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default PlainNews;
-
-// import React, { useState, useEffect } from "react";
-// import { IoTimerOutline } from "react-icons/io5";
-// import axios from "axios";
-// import { COPPER_NEWS } from "@/src/api/lithiumAPI";
-// import Loader from "../Loader";
-
-// const PlainNews = () => {
-//   const [newsData, setNewsData] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchNewsData = async () => {
-//       try {
-//         setLoading(true);
-//         const response = await axios.get(`${COPPER_NEWS}?news_type=copper`);
-//         const data = response.data;
-
-//         if (data && Array.isArray(data) && data.length > 0) {
-//           // Process the data to add today's date for null dates
-//           const processedData = data.map((news) => ({
-//             ...news,
-//             date: news.date || new Date().toISOString(),
-//           }));
-//           setNewsData(processedData);
-//         } else {
-//           setNewsData([]);
-//         }
-//       } catch (err) {
-//         setError("Failed to fetch news data");
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchNewsData();
-//   }, []);
-
-//   // Function to format the date
-//   const formatDate = (dateString) => {
-//     if (!dateString) {
-//       return new Date().toLocaleDateString("en-US", {
-//         year: "numeric",
-//         month: "short",
-//         day: "numeric",
-//       });
-//     }
-
-//     try {
-//       const date = new Date(dateString);
-//       return date.toLocaleDateString("en-US", {
-//         year: "numeric",
-//         month: "short",
-//         day: "numeric",
-//       });
-//     } catch (error) {
-//       console.warn("Invalid date format:", dateString);
-//       return new Date().toLocaleDateString("en-US", {
-//         year: "numeric",
-//         month: "short",
-//         day: "numeric",
-//       });
-//     }
-//   };
-
-//   if (loading) {
-//     return (
-//       <div>
-//         <Loader />
-//       </div>
-//     );
-//   }
-
-//   if (error) {
-//     return <div>{error}</div>;
-//   }
-
-//   if (!newsData || newsData.length === 0) {
-//     return <div>No data available</div>;
-//   }
-
-//   return (
-//     <div>
-//       <div className="">
-//         <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
-//           Latest Platinum News
-//         </h1>
-
-//         <div className="flex flex-wrap md:flex-nowrap gap-5">
-//           <div className="w-full grid grid-cols-1 gap-3">
-//             {newsData.slice(0, 10).map((news, index) => (
-//               <a
-//                 key={index}
-//                 target="_blank"
-//                 href={news.url}
-//                 className="bg-white border-b border-black/10 pb-4 rounded-sm overflow-hidden block group transition-shadow duration-300"
-//               >
-//                 <div>
-//                   <h2 className="group-hover:underline text-[16px] md:text-[17px] text-primary mt-1 leading-6">
-//                     {news.title}
-//                   </h2>
-//                   <p className="text-gray-500 text-xs mt-2 flex gap-x-1.5 items-center">
-//                     {formatDate(news.date)}
-//                   </p>
-//                 </div>
-//               </a>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default PlainNews;
-
 import React, { useState, useEffect } from "react";
 import { PRESS_RELEASE } from "@/src/api/lithiumAPI";
 import Loader from "../Loader";
+
+const formatDate = (dateString) => {
+  const fallback = new Date().toLocaleDateString("en-US", {
+    year: "numeric", month: "short", day: "numeric",
+  });
+  if (!dateString) return fallback;
+  try {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric", month: "short", day: "numeric",
+    });
+  } catch {
+    return fallback;
+  }
+};
 
 const PlainNews = () => {
   const [newsData, setNewsData] = useState([]);
@@ -225,63 +24,22 @@ const PlainNews = () => {
   useEffect(() => {
     const fetchNewsData = async () => {
       try {
-        setLoading(true);
-        console.log('Fetching plain news from:', PRESS_RELEASE);
         const response = await fetch(PRESS_RELEASE);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
-        console.log('Plain news data:', data);
-
-        if (data && Array.isArray(data) && data.length > 0) {
-          const processedData = data.map((news) => ({
-            ...news,
-            date: news.date || new Date().toISOString(),
-          }));
-          setNewsData(processedData);
-        } else {
-          setNewsData([]);
-        }
-        setLoading(false);
+        const processed = Array.isArray(data) && data.length > 0
+          ? data.map((n) => ({ ...n, date: n.date || new Date().toISOString() }))
+          : [];
+        setNewsData(processed);
       } catch (err) {
-        console.error('Error fetching plain news:', err);
+        console.error("Error fetching plain news:", err);
         setError("Failed to fetch news data");
-        setNewsData([]);
+      } finally {
         setLoading(false);
       }
     };
-
     fetchNewsData();
   }, []);
-
-  const formatDate = (dateString) => {
-    if (!dateString) {
-      return new Date().toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-    }
-
-    try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-    } catch (error) {
-      console.warn("Invalid date format:", dateString);
-      return new Date().toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-    }
-  };
 
   if (loading) {
     return (
@@ -301,7 +59,7 @@ const PlainNews = () => {
     );
   }
 
-  if (!newsData || newsData.length === 0) {
+  if (!newsData.length) {
     return (
       <div>
         <h1 className="text-[21px] cambay font-bold mb-3">Latest Nickel News</h1>
@@ -312,49 +70,36 @@ const PlainNews = () => {
 
   return (
     <div>
-      <div>
-        <h1 className="text-[21px] cambay font-bold mb-3">Latest Nickel News</h1>
-
-        <div className="flex flex-wrap md:flex-nowrap gap-5">
-          <div className="w-full grid grid-cols-1 gap-3">
-            {newsData.slice(0, 16).map((news, index) => (
-              <a
-                key={news.id || index}
-                target="_blank"
-                href={news.url}
-                className="bg-white pb-4 rounded-sm overflow-hidden block group transition-shadow duration-300"
-              >
-                <div className="flex justify-between items-start gap-4">
-                  <div className="flex-1">
-                    {/* Ticker Badge */}
-                    {news.ticker && (
-                      <div className="mb-2">
-                        <span className="bg-accent text-[10px] rounded-sm text-white px-2 py-1">
-                          {news.ticker}
-                        </span>
-                      </div>
-                    )}
-                    
-                    <h2 className="group-hover:underline text-[16px] md:text-[17px] text-primary leading-6">
-                      {news.title}
-                    </h2>
-                    
-                    {/* Company Name */}
-                    {news.company_name && (
-                      <p className="text-[12px] text-gray-600 mt-1">
-                        {news.company_name}
-                      </p>
-                    )}
+      <h1 className="text-[21px] cambay font-bold mb-3">Latest Nickel News</h1>
+      <div className="w-full grid grid-cols-1 gap-3">
+        {newsData.slice(0, 16).map((news, index) => (
+          <a
+            key={news.id || index}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={news.url}
+            className="bg-white pb-4 rounded-sm overflow-hidden block group transition-shadow duration-300"
+          >
+            <div className="flex justify-between items-start gap-4">
+              <div className="flex-1">
+                {news.ticker && (
+                  <div className="mb-2">
+                    <span className="bg-accent text-[10px] rounded-sm text-white px-2 py-1">
+                      {news.ticker}
+                    </span>
                   </div>
-                  
-                  <span className="text-gray-500 text-xs whitespace-nowrap">
-                    {formatDate(news.date)}
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+                )}
+                <h2 className="group-hover:underline text-[16px] md:text-[17px] text-primary leading-6">
+                  {news.title}
+                </h2>
+                {news.company_name && (
+                  <p className="text-[12px] text-gray-600 mt-1">{news.company_name}</p>
+                )}
+              </div>
+              <span className="text-gray-500 text-xs whitespace-nowrap">{formatDate(news.date)}</span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   );

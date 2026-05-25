@@ -22,4 +22,12 @@ const calendar = () => {
   );
 };
 
+// ISR: calendar events change infrequently — revalidate every hour
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 3600, // 1 hour
+  };
+}
+
 export default calendar;

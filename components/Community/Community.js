@@ -280,7 +280,7 @@ const Community = () => {
   return (
     <div className="relative h-screen flex flex-col">
       <Navbar />
-      <div className="flex flex-1 overflow-hidden px-2 lg:px-4 mt-[80px] flex-col lg:flex-row">
+      <div className="flex flex-1 overflow-hidden px-2 lg:px-4 mt-[116px] flex-col lg:flex-row">
         <CommunityLeftSide
           stockDetailsData={localState.stockDetailsData}
           setSearchQuery={(query) => updateState({ cashtag: query , isSearchActive: true})}

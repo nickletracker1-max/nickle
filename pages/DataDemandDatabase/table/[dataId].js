@@ -364,7 +364,7 @@ const TableSubpage = () => {
       />
 
       <DataBreadcrumb title={table.title} />
-      <div className="px-2 py-4 md:px-20 mt-4 md:mt-14 mb-4 md:mb-10">
+      <div className="px-2 py-4 md:px-20 mt-4 md:mt-[116px] mb-4 md:mb-10">
         <h1 className="text-xl md:text-2xl font-bold mb-4 md:mb-8 mt-8">
           {table.title}
         </h1>

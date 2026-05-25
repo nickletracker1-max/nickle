@@ -33,7 +33,7 @@ const home = () => {
 
       <Navbar />
 
-      <div className="pt-24 w-full">
+      <div className="pt-[116px] w-full">
         <div className="mt-2  w-full">
           <StocksMarquee />
         </div>
@@ -129,5 +129,13 @@ const home = () => {
     </div>
   );
 };
+
+// ISR: home page has live prices (fetched client-side) and news — revalidate every 2 minutes
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 120, // 2 minutes
+  };
+}
 
 export default home;

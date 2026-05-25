@@ -259,7 +259,7 @@ const StockDetailPage = () => {
         keywords="stock details, market insights, stock analysis, stock performance, investment, financial data, stock trends"
       />
       <Navbar />
-      <div className="flex flex-col md:flex-row justify-between px-2 md:px-12 my-10 pb-20 mt-24">
+      <div className="flex flex-col md:flex-row justify-between px-2 md:px-12 my-10 pb-20 mt-[116px]">
         <div className="w-full md:w-[75%] flex flex-col gap-y-8 border border-gray-200 rounded-md p-6">
           <div className="flex flex-col gap-y-2">
             <p className="text-xs text-gray-500">

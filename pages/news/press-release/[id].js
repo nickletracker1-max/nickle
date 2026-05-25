@@ -176,7 +176,7 @@ const PressReleasePage = () => {
       />
 
       <Navbar />
-      <div className="mt-16 w-full px-3 lg:px-20 py-8 lg:py-16 flex flex-col lg:flex-row lg:space-x-6">
+      <div className="mt-[116px] w-full px-3 lg:px-20 py-8 lg:py-16 flex flex-col lg:flex-row lg:space-x-6">
         {/* Main news content */}
         <div className="w-full lg:w-[65%]">
           <h1 className="text-xl lg:text-[1.7rem] font-bold mb-4">

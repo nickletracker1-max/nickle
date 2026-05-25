@@ -19,7 +19,7 @@ const ChartSubpage = ({ chart }) => {
         canonicalUrl={`${SITE_URL}/DataDemandDatabase/${chart.id}`}
       />
       <DataBreadcrumb title={chart.title} />
-      <div className="px-6 py-10 md:px-20 mt-14 mb-10">
+      <div className="px-6 py-10 md:px-20 mt-[116px] mb-10">
         <h1 className="text-2xl font-bold">{chart.title}</h1>
         <p className="mt-1.5 mb-1 font-medium text-black/50 text-sm">
           Source:{" "}

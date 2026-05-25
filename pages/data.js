@@ -37,7 +37,7 @@ const Data = () => {
       
       
       
-      <div className="pt-28">
+      <div className="pt-[116px]">
           <Ticker/>
           <DataHero />
       </div>
@@ -70,5 +70,13 @@ const Data = () => {
     </div>
   );
 };
+
+// ISR: data page is mostly static charts/content — revalidate every 30 minutes
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 1800, // 30 minutes
+  };
+}
 
 export default Data;

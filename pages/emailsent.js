@@ -15,7 +15,7 @@ const EmailSent = () => {
         keywords="email sent, confirmation, inbox, message delivered, email success, verification email, next steps"
       />
 
-      <main className="flex-grow mt-16">
+      <main className="flex-grow mt-[116px]">
         <div className="flex h-[calc(100vh-4rem)]">
           <div className="w-full flex flex-col justify-center px-10">
             <div className="max-w-md mx-auto w-full bg-white p-8 rounded-lg shadow-md">

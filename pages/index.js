@@ -13,7 +13,6 @@ import MostPopularNews from "@/components/Home/MostPopularNews";
 import Substacks from "@/components/Home/Substacks";
 import DailyNewsletterAd from "@/components/Home/DailyNewsletterAd";
 import Footer from "@/components/Footer";
-import TVLithiumCFD from "@/components/Home/TVLithiumCFD";
 import TVLithium from "@/components/Home/TVLithium";
 import DirectHomeLithiumPrice from "@/components/Home/DirectHomeLithiumPrice";
 import HomeInsiderTransactions from "@/components/Home/HomeInsiderTransactions";
@@ -94,13 +93,6 @@ const home = () => {
               <PopularTools />
             </div>   
               <DailyNewsletterAd />
-              
-              <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
-                Nickel Price Chart
-              </h1>
-              <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm w-full">
-                <TVLithiumCFD />
-              </div>
           </div>
         </div>
 

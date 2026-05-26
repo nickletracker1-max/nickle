@@ -12,7 +12,6 @@ import MostPopularNews from "@/components/Home/MostPopularNews";
 import Substacks from "@/components/Home/Substacks";
 import DailyNewsletterAd from "@/components/Home/DailyNewsletterAd";
 import Footer from "@/components/Footer";
-import TVLithiumCFD from "@/components/Home/TVLithiumCFD";
 import TVLithium from "@/components/Home/TVLithium";
 import PlainNews from "@/components/Home/PlainNews";
 import HomeLithiumPrice from "@/components/Home/HomeLithiumPrice";
@@ -35,12 +34,6 @@ const home = () => {
       <div className="flex flex-col lg:flex-row justify-between gap-6 px-3 md:px-10 lg:px-12 py-8 mb-8">
         {/* 1  */}
         <div className="w-full lg:w-[24%] flex flex-col space-y-6">
-          <div>
-            <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
-              Nickel Price Chart
-            </h1>
-            <TVLithiumCFD />
-          </div>
           <DailyNewsletterAd />
         </div>
 

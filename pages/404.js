@@ -8,9 +8,9 @@ export default function Custom404() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen  text-black">
       <SEO
-        title="Page Not Found - Lithium Tracker"
-        description="Oops! The page you're looking for doesn’t exist. Get back on track with the latest Lithium and Lithium Alloys market updates and insights."
-        keywords="404, page not found, Lithium market, Lithium prices, Lithium tracker"
+        title="Page Not Found - Nickel Tracker"
+        description="Oops! The page you're looking for doesn’t exist. Get back on track with the latest Nickel and Nickel Alloys market updates and insights."
+        keywords="404, page not found, Nickel market, Nickel prices, Nickel tracker"
       />
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -32,7 +32,7 @@ export default function Custom404() {
         className="flex flex-col items-center"
       >
         <p className="mb-4 text-gray-400">
-          Platinum prices don’t wait—head back to the dashboard!
+          Nickel prices don’t wait—head back to the dashboard!
         </p>
         <div className="flex items-center space-x-2 hover:bg-gray-100 hover:text-secondary transition-all duration-500 ease-in-out p-2 rounded">
           <AiOutlineStock className="text-accent text-4xl" />
@@ -52,7 +52,7 @@ export default function Custom404() {
       >
         <p>
           If you're stuck, contact us at{" "}
-          <span className="text-accent">info@platinumtracker.com</span>.
+          <span className="text-accent">info@nickelmetaltracker.com</span>.
         </p>
       </motion.div>
     </div>

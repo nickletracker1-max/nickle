@@ -16,9 +16,9 @@ const DetailPage = ({ card }) => {
   return (
     <div className="relative">
       <SEO
-        title={`${card.title} - Lithium Alloys Guide & Glossary`}
+        title={`${card.title} - Nickel Alloys Guide & Glossary`}
         description="Explore the world of Copper and its alloys with our comprehensive guide. Learn about copper, brass, bronze, aluminum bronze, nickel silver, and beryllium copper, their properties, uses, and market significance."
-        keywords="Lithium 101, Lithium Alloys, copper, brass, bronze, aluminum bronze, nickel silver, beryllium copper, metal properties, copper glossary, industrial metals"
+        keywords="Nickel 101, Nickel Alloys, copper, brass, bronze, aluminum bronze, nickel silver, beryllium copper, metal properties, copper glossary, industrial metals"
         canonicalUrl={`${SITE_URL}/copper101/${card.id}`}
       />
       {/* Breadcrumb Component */}

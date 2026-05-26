@@ -9,6 +9,7 @@ import PopularIntradayReturn from "@/components/Home/MostFollowed";
 import MoreNews from "@/components/News/MoreNews";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
+import SEO from "@/components/SEO";
 
 const StockNewsPage = () => {
   const router = useRouter();
@@ -54,17 +55,28 @@ const StockNewsPage = () => {
   if (loading) {
     return (
       <div className="text-center py-8 mx-auto">
+        <SEO title="Loading... - Nickel Tracker" description="Loading news..." />
         <Loader />
       </div>
     );
   }
 
   if (!newsData) {
-    return <div className="text-center py-8">Press release not found</div>;
+    return (
+      <div className="text-center py-8">
+        <SEO title="News Not Found - Nickel Tracker" description="News article not found." />
+        News not found
+      </div>
+    );
   }
 
   return (
     <>
+      <SEO
+        title={`${newsData.title} - Nickel Tracker`}
+        description={newsData.content ? `${newsData.content.substring(0, 150)}...` : "Read the latest stock news and market updates on Nickel Tracker."}
+        keywords="stock news, nickel news, market updates"
+      />
       <Navbar />
       <div className="mt-[116px] w-full flex justify-between px-3 md:px-20 py-8 md:py-16">
         {/* news  */}

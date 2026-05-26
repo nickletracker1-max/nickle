@@ -158,20 +158,26 @@ const PressReleasePage = () => {
   if (loading) {
     return (
       <div className="text-center py-8 mx-auto">
+        <SEO title="Loading... - Nickel Tracker" description="Loading press release..." />
         <Loader />
       </div>
     );
   }
 
   if (!newsData) {
-    return <div className="text-center py-8">Press release not found</div>;
+    return (
+      <div className="text-center py-8">
+        <SEO title="Press Release Not Found - Nickel Tracker" description="Press release not found." />
+        Press release not found
+      </div>
+    );
   }
 
   return (
     <>
       <SEO
-        title="Press Release - Latest News & Updates"
-        description="Read the latest press releases and stay informed with important news and updates from the industry."
+        title={`${newsData.title} - Nickel Tracker`}
+        description={newsData.content ? `${newsData.content.substring(0, 150)}...` : "Read the latest press releases and stay informed with important news and updates from the industry."}
         keywords="press release, latest news, industry updates, company announcements, financial news, market insights"
       />
 

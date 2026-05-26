@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "@/components/SEO";
 import Hero from "@/components/Home/Hero";
 import StockNews from "@/components/Home/StockNews";
 import Navbar from "@/components/Navbar";
@@ -20,6 +21,11 @@ import HomeInsiderTransactions from "@/components/Home/HomeInsiderTransactions";
 const home = () => {
   return (
     <div>
+      <SEO
+        title="Nickel Tracker - Real-time News, Prices & Analysis"
+        description="Stay ahead with real-time Nickel market news, price updates, and in-depth analysis."
+        keywords="Nickel prices, Nickel news, Nickel market analysis"
+      />
       <Navbar />
       <div className="pt-[116px]">
         <Hero />

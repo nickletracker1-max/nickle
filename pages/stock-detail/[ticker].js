@@ -227,9 +227,9 @@ const StockDetailPage = () => {
     return (
       <div>
         <SEO
-          title="Stock Not Found"
-          description="Stock Not Found"
-          keywords="stock details, market insights, stock analysis, stock performance, investment, financial data, stock trends"
+          title="Stock Not Found - Nickel Tracker"
+          description={`We couldn't find any data for the stock ticker "${ticker}".`}
+          keywords="stock details, stock not found"
         />
         <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4">
           <div className="text-center">
@@ -254,9 +254,9 @@ const StockDetailPage = () => {
   return (
     <div>
       <SEO
-        title="Stock Details - Market Insights & Analysis"
-        description="Get in-depth stock details, real-time market data, historical performance, and expert analysis to make informed investment decisions."
-        keywords="stock details, market insights, stock analysis, stock performance, investment, financial data, stock trends"
+        title={`${data[0].stock_name} (${data[0].stock_ticker}) Stock Price & Details - Nickel Tracker`}
+        description={`Get in-depth stock details, real-time market data, historical performance, and expert analysis for ${data[0].stock_name} (${data[0].stock_ticker}).`}
+        keywords={`${data[0].stock_ticker}, ${data[0].stock_name}, stock details, market insights, stock analysis, stock performance, investment, financial data`}
       />
       <Navbar />
       <div className="flex flex-col md:flex-row justify-between px-2 md:px-12 my-10 pb-20 mt-[116px]">

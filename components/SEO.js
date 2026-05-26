@@ -27,7 +27,15 @@ const SEO = ({ title, description, keywords, canonicalUrl }) => {
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={SITE_LOGO} />
+      <meta property="og:image:alt" content={`${SITE_NAME} Logo`} />
       <meta property="og:url" content={canonical} />
+      <meta property="og:site_name" content={SITE_NAME} />
+
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={SITE_LOGO} />
 
       {/* Canonical */}
       <link rel="canonical" href={canonical} />
